@@ -5,7 +5,7 @@ var move_speed : float = 100.0
 func _ready():
 	pass
 	
-func _process(delta):
+func _process(_delta):
 	
 	var direction : Vector2 = Vector2.ZERO
 	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
@@ -14,5 +14,5 @@ func _process(delta):
 	velocity = direction * move_speed
 	pass
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	move_and_slide()
