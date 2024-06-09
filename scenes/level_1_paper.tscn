@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://lh8m4ss0mrvw"]
 
-[ext_resource type="Script" path="res://level1_paper.gd" id="1_ln6ja"]
+[ext_resource type="Script" path="res://scripts/level1_paper.gd" id="1_kr2ju"]
 [ext_resource type="Texture2D" uid="uid://3rvdpfu4e57q" path="res://sample_assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/fruit.png" id="2_1l0f4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_21w43"]
@@ -8,7 +8,7 @@ radius = 12.0416
 
 [node name="level1_paper" type="Area2D"]
 collision_mask = 2
-script = ExtResource("1_ln6ja")
+script = ExtResource("1_kr2ju")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_1l0f4")

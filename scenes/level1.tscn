@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://buch4vbl4rsj0"]
+[gd_scene load_steps=7 format=3 uid="uid://buch4vbl4rsj0"]
 
 [ext_resource type="Texture2D" uid="uid://d2r34smo1ry1i" path="res://sample_assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_vhuyh"]
 [ext_resource type="PackedScene" uid="uid://d2ykemmyhdq57" path="res://scenes/player.tscn" id="2_7xpuj"]
 [ext_resource type="PackedScene" uid="uid://lh8m4ss0mrvw" path="res://scenes/level_1_paper.tscn" id="3_kbkyt"]
+[ext_resource type="PackedScene" uid="uid://d28jninlsf4ot" path="res://scenes/ingame_ui.tscn" id="4_3w26x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yi3cr"]
 texture = ExtResource("1_vhuyh")
@@ -140,6 +141,7 @@ sources/0 = SubResource("TileSetAtlasSource_yi3cr")
 [node name="Level1" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(484, 301)
 tile_set = SubResource("TileSet_1qc2y")
 format = 2
 layer_0/name = "Background"
@@ -148,7 +150,7 @@ layer_1/name = "TopGround"
 layer_1/tile_data = PackedInt32Array()
 
 [node name="Player" parent="." instance=ExtResource("2_7xpuj")]
-position = Vector2(38, 23)
+position = Vector2(522, 324)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, 5)
@@ -157,10 +159,12 @@ zoom = Vector2(4, 4)
 [node name="papers" type="Node" parent="."]
 
 [node name="level1_paper" parent="papers" instance=ExtResource("3_kbkyt")]
-position = Vector2(114, 32)
+position = Vector2(598, 333)
 
 [node name="level1_paper2" parent="papers" instance=ExtResource("3_kbkyt")]
-position = Vector2(54, 55)
+position = Vector2(538, 356)
 
 [node name="level1_paper3" parent="papers" instance=ExtResource("3_kbkyt")]
-position = Vector2(107, 62)
+position = Vector2(591, 363)
+
+[node name="UI" parent="." instance=ExtResource("4_3w26x")]
