@@ -1,13 +1,14 @@
 class_name Player extends CharacterBody2D
 
-var move_speed : float = 100.0
-
 @onready var all_interactions = []
 @onready var interact_label = $InteractionComponents/InteractLabel
 
+var move_speed : float = 100.0
+var paper_complete := false
 
 func _ready():
 	update_interactions()
+	Game.connect("paper_iscomplete", paper_completed)
 	
 func _process(_delta):
 	
@@ -48,3 +49,13 @@ func execute_interaction():
 		var cur_interaction = all_interactions[0]
 		match cur_interaction.interact_type:
 			"show_note": print(cur_interaction.interact_value)
+			"show_description": print(cur_interaction.interact_value)
+			"interactable": 
+				if paper_complete:
+					print("paper completed - show code")
+				else:
+					print("di pa tapos!")
+				
+
+func paper_completed():
+	paper_complete = true

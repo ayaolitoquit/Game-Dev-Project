@@ -6,7 +6,6 @@ var body_detected = false
 func _on_body_entered(body):
 	if body.name == "Player":
 		body_detected = true
-		
 
 func _on_body_exited(body):
 	if body.name == "Player":

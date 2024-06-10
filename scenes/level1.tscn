@@ -181,7 +181,13 @@ interact_value = "This is our wedding photo."
 interactable_image = ExtResource("6_30ful")
 
 [node name="Interactable2" parent="Interactables" instance=ExtResource("5_7eifu")]
-position = Vector2(564, 228)
+position = Vector2(450, 222)
 interact_label = "Note#2"
 interact_type = "show_note"
 interact_value = "I remember this..."
+
+[node name="Interactable3" parent="Interactables" instance=ExtResource("5_7eifu")]
+position = Vector2(578, 225)
+interact_label = "Wedding Photo Frame"
+interact_type = "interactable"
+interact_value = "Now it's complete"

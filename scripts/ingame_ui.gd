@@ -5,6 +5,7 @@ extends Control
 @onready var mission_2 = $CanvasLayer/Panel/VBoxContainer/Mission2
 
 static var paper_collected := 0
+static var paper_complete := false
 
 func _ready():
 	Game.connect("paper_iscollected", collectpaper)
@@ -14,6 +15,7 @@ func _ready():
 func _process(_delta):
 #collect broken pieces
 	if paper_collected == 3:
+		Game.emit_signal("paper_iscomplete")
 		mission_1.hide()
 		mission_2.show()
 
