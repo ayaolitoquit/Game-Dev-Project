@@ -7,6 +7,8 @@
 radius = 12.0416
 
 [node name="level1_paper" type="Area2D"]
+texture_filter = 1
+scale = Vector2(2.4, 2.4)
 collision_mask = 2
 script = ExtResource("1_kr2ju")
 

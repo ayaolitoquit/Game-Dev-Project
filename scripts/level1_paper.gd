@@ -13,8 +13,7 @@ func _on_body_exited(body):
 		body_detected = false
 
 func _process(delta):
-	if body_detected and Input.is_action_just_pressed("e"):
+	if body_detected and Input.is_action_just_pressed("interact"):
 		print("nakuha")
-		#emit_signal("paper_collected")
-		Game.paper_collected += 1
+		Game.emit_signal("paper_iscollected")
 		queue_free()
