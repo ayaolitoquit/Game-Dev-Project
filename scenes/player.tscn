@@ -12,6 +12,7 @@ radius = 15.0
 
 [sub_resource type="SystemFont" id="SystemFont_78fr0"]
 font_names = PackedStringArray("Arial")
+subpixel_positioning = 0
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 3

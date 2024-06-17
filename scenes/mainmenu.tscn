@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://blcg6xjxdljfb"]
+[gd_scene load_steps=7 format=3 uid="uid://blcg6xjxdljfb"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_pht01"]
-[ext_resource type="Texture2D" uid="uid://doidtqtuga806" path="res://assets/icon.svg" id="2_d4o6k"]
+[ext_resource type="Texture2D" uid="uid://nrtpr2r3ylm4" path="res://assets/Main Menu/Game.png" id="2_38b3j"]
+[ext_resource type="Texture2D" uid="uid://c1lbbcewyym1h" path="res://assets/Main Menu/Play button.png" id="3_1u32b"]
+[ext_resource type="Texture2D" uid="uid://dmrww2lqh7c6m" path="res://assets/Main Menu/Settings button.png" id="3_mk5ua"]
+[ext_resource type="Texture2D" uid="uid://b6ekt05ihiwnq" path="res://assets/Main Menu/Credits button.png" id="4_xb3nm"]
+[ext_resource type="Texture2D" uid="uid://wdxbr5mr63t7" path="res://assets/Main Menu/Exit button.png" id="5_ggmlo"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -12,6 +16,19 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_pht01")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -93.0
+offset_bottom = 88.2379
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_38b3j")
+expand_mode = 1
+stretch_mode = 3
+
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -19,78 +36,58 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 12
+theme_override_constants/margin_left = 280
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
-layout_mode = 2
-theme_override_constants/separation = 60
-
-[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 64
-text = "GAME TITLE"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-alignment = 1
+size_flags_horizontal = 0
+theme_override_constants/separation = -25
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 135
+alignment = 2
+
+[node name="Settings" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("3_mk5ua")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Separator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 12
-alignment = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = -20
+alignment = 1
 
 [node name="Play" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(75, 75)
+custom_minimum_size = Vector2(220, 75)
 layout_mode = 2
-texture_normal = ExtResource("2_d4o6k")
+texture_normal = ExtResource("3_1u32b")
 ignore_texture_size = true
-stretch_mode = 5
-
-[node name="Settings" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-custom_minimum_size = Vector2(75, 75)
-layout_mode = 2
-texture_normal = ExtResource("2_d4o6k")
-ignore_texture_size = true
-stretch_mode = 5
+stretch_mode = 0
 
 [node name="Credits" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture_normal = ExtResource("2_d4o6k")
+texture_normal = ExtResource("4_xb3nm")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="Exit" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
-texture_normal = ExtResource("2_d4o6k")
+texture_normal = ExtResource("5_ggmlo")
 ignore_texture_size = true
 stretch_mode = 5
-
-[node name="Separator" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Separator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Separator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="Separator4" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
