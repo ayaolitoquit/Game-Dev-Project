@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhlyxse2u0tep"]
 
 [ext_resource type="Script" path="res://scripts/interactable.gd" id="1_2gak1"]
-[ext_resource type="Texture2D" uid="uid://doidtqtuga806" path="res://assets/icon.svg" id="2_dd7mr"]
+[ext_resource type="Texture2D" uid="uid://lvxi3v4vgpwq" path="res://assets/Level1/GDLevel1.png" id="2_82shw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5pn0"]
-radius = 19.3132
+radius = 8.0
 
 [node name="Interactable" type="Area2D"]
 collision_layer = 4
@@ -17,5 +17,7 @@ shape = SubResource("CircleShape2D_o5pn0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4.76837e-07)
-scale = Vector2(0.203125, 0.203125)
-texture = ExtResource("2_dd7mr")
+scale = Vector2(1.01071, 1.00312)
+texture = ExtResource("2_82shw")
+region_enabled = true
+region_rect = Rect2(50.1869, 274.783, 10.7023, 11.1483)

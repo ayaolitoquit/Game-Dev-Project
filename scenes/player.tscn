@@ -1,64 +1,34 @@
-[gd_scene load_steps=10 format=3 uid="uid://d2ykemmyhdq57"]
+[gd_scene load_steps=6 format=3 uid="uid://d2ykemmyhdq57"]
 
-[ext_resource type="Texture2D" uid="uid://crf6b0xpusgmc" path="res://sample_assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/knight.png" id="1_evcp3"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_p02qj"]
+[ext_resource type="Texture2D" uid="uid://lvxi3v4vgpwq" path="res://assets/Level1/GDLevel1.png" id="2_xnd0l"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_it1g8"]
-atlas = ExtResource("1_evcp3")
-region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_koauq"]
-atlas = ExtResource("1_evcp3")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vv5la"]
-atlas = ExtResource("1_evcp3")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_luq71"]
-atlas = ExtResource("1_evcp3")
-region = Rect2(96, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7mw5a"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_it1g8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_koauq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vv5la")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_luq71")
-}],
-"loop": true,
-"name": &"default",
-"speed": 10.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_6hsva"]
-radius = 14.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_inqos"]
+radius = 3.10351
+height = 9.31054
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ot1jq"]
-radius = 25.1794
+radius = 15.0
+
+[sub_resource type="SystemFont" id="SystemFont_78fr0"]
+font_names = PackedStringArray("Arial")
 
 [node name="Player" type="CharacterBody2D"]
 z_index = 3
+scale = Vector2(1.9147, 1.9147)
 collision_layer = 2
 script = ExtResource("1_p02qj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(2.29303, 2.29303)
-sprite_frames = SubResource("SpriteFrames_7mw5a")
-autoplay = "default"
-frame_progress = 0.447434
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_xnd0l")
+region_enabled = true
+region_rect = Rect2(129.809, 251.377, 14.0536, 21.6209)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 10)
-shape = SubResource("CircleShape2D_6hsva")
+position = Vector2(-0.522275, 7.31185)
+rotation = -1.57079
+scale = Vector2(1.00971, 1.16989)
+shape = SubResource("CapsuleShape2D_inqos")
 
 [node name="InteractionComponents" type="Node2D" parent="."]
 z_index = 1
@@ -69,16 +39,19 @@ collision_mask = 4
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionComponents/InteractionArea"]
-position = Vector2(-2, 5)
+position = Vector2(-1.19209e-07, 9.53674e-07)
+scale = Vector2(1.00773, 1.05963)
 shape = SubResource("CircleShape2D_ot1jq")
 
 [node name="InteractLabel" type="Label" parent="InteractionComponents"]
-offset_left = -99.0
-offset_top = -47.0
-offset_right = 99.0
-offset_bottom = -24.0
+offset_left = -24.0247
+offset_top = -16.7128
+offset_right = 173.975
+offset_bottom = 6.2872
+scale = Vector2(0.25, 0.25)
 size_flags_horizontal = 2
-theme_override_font_sizes/font_size = 13
+theme_override_fonts/font = SubResource("SystemFont_78fr0")
+theme_override_font_sizes/font_size = 14
 text = "text"
 horizontal_alignment = 1
 vertical_alignment = 1

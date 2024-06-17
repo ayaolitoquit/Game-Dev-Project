@@ -48,7 +48,10 @@ func execute_interaction():
 	if all_interactions:
 		var cur_interaction = all_interactions[0]
 		match cur_interaction.interact_type:
-			"show_note": print(cur_interaction.interact_value)
+			"show_note": 
+				print(cur_interaction.interact_value)
+				if interact_label.text == str("Wedding Photo"):
+					Game.wedding_photo_interacted.emit()
 			"show_description": print(cur_interaction.interact_value)
 			"interactable": 
 				if paper_complete:
