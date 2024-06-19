@@ -49,6 +49,8 @@ func execute_interaction():
 		var cur_interaction = all_interactions[0]
 		match cur_interaction.interact_type:
 			"show_note": 
+#todo: pass interact_value to signal that ui hears, pass to dialogue box
+				Game.items_interacted.emit(str(cur_interaction.interact_value))
 				print(cur_interaction.interact_value)
 				if interact_label.text == str("Wedding Photo"):
 					Game.wedding_photo_interacted.emit()

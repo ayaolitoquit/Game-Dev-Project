@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://d28jninlsf4ot"]
+[gd_scene load_steps=5 format=3 uid="uid://d28jninlsf4ot"]
 
 [ext_resource type="Script" path="res://scripts/ingame_ui.gd" id="1_ka0ky"]
+[ext_resource type="Texture2D" uid="uid://c31l8ov4vkwh0" path="res://assets/Main Menu/Pause button.png" id="2_hgt7f"]
+[ext_resource type="FontFile" uid="uid://c84gdatq4eyha" path="res://assets/fonts/Silkscreen/Silkscreen-Regular.ttf" id="2_ky7a8"]
+[ext_resource type="Texture2D" uid="uid://ddr014s6eb3tn" path="res://assets/Dialouge box.png" id="4_brmfn"]
 
 [node name="IngameUI" type="Control"]
 layout_mode = 3
@@ -15,35 +18,108 @@ quests = PackedStringArray("Collect paper", "Use the code")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_right = 257.0
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 313.0
 offset_bottom = 154.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 41.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel/MarginContainer"]
+layout_mode = 2
 theme_override_constants/separation = 12
 
-[node name="Control" type="Control" parent="CanvasLayer/Panel/VBoxContainer"]
+[node name="Control" type="Control" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Mission1" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+[node name="Mission1" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(1, 0.870588, 0.34902, 1)
+theme_override_fonts/font = ExtResource("2_ky7a8")
 text = "Pick the broken pieces: "
 
-[node name="Counter" type="Label" parent="CanvasLayer/Panel/VBoxContainer/Mission1"]
+[node name="Counter" type="Label" parent="CanvasLayer/Panel/MarginContainer/VBoxContainer/Mission1"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -71.0
-offset_top = -11.5
-offset_bottom = 11.5
+offset_left = 8.0
+offset_top = -10.5
+offset_right = 79.0
+offset_bottom = 12.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_ky7a8")
 text = "0/9"
+
+[node name="Panel2" type="Panel" parent="CanvasLayer"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -117.0
+offset_right = -1.0
+offset_bottom = 116.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel2"]
+texture_filter = 1
+position = Vector2(58, 58)
+texture = ExtResource("2_hgt7f")
+
+[node name="Panel3" type="Panel" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="DialougeBox" type="Sprite2D" parent="CanvasLayer/Panel3"]
+position = Vector2(-9, -61.25)
+scale = Vector2(1.20258, 0.742236)
+texture = ExtResource("4_brmfn")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel3/DialougeBox"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -213.5
+offset_top = -80.5
+offset_right = -213.5
+offset_bottom = -80.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Label" type="Label" parent="CanvasLayer/Panel3/DialougeBox/MarginContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ky7a8")
+text = "something..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

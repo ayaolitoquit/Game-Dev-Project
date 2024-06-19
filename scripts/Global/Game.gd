@@ -6,3 +6,4 @@ var is_wedphoto_interacted = false
 signal paper_iscollected
 signal paper_iscomplete
 signal wedding_photo_interacted
+signal items_interacted(string)

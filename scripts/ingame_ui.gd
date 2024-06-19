@@ -1,7 +1,11 @@
 extends Control
 
-@onready var counter = $CanvasLayer/Panel/VBoxContainer/Mission1/Counter
-@onready var mission_1 = $CanvasLayer/Panel/VBoxContainer/Mission1
+@onready var counter = $CanvasLayer/Panel/MarginContainer/VBoxContainer/Mission1/Counter
+@onready var mission_1 = $CanvasLayer/Panel/MarginContainer/VBoxContainer/Mission1
+@onready var dialouge_box = $CanvasLayer/Panel3/DialougeBox
+@onready var item_label = $CanvasLayer/Panel3/DialougeBox/MarginContainer/Label
+@onready var timer = $Timer
+
 @export var quests := PackedStringArray()
 
 static var paper_collected := 0
@@ -14,8 +18,10 @@ var quest_counter = 0
 func _ready():
 	Game.connect("paper_iscollected", collectpaper)
 	Game.connect("wedding_photo_interacted", wedphoto_interacted)
+	Game.connect("items_interacted", item_description)
 	mission_1.visible = false
 	mission_1.text = quests[quest_counter]
+	dialouge_box.visible = false
 
 func _process(_delta):
 	if is_wedphoto_interacted:
@@ -39,3 +45,12 @@ func wedphoto_interacted():
 
 func quest_completed():
 	quest_counter += 1
+
+func item_description(string):
+	timer.start()
+	dialouge_box.visible = true
+	item_label.text = string
+
+
+func _on_timer_timeout():
+	dialouge_box.visible = false
