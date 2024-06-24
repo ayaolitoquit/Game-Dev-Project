@@ -13,8 +13,6 @@ static var paper_complete := false
 var is_wedphoto_interacted = false
 var quest_counter = 0
 
-
-
 func _ready():
 	Game.connect("paper_iscollected", collectpaper)
 	Game.connect("wedding_photo_interacted", wedphoto_interacted)

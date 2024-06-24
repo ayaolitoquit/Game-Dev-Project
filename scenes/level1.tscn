@@ -907,7 +907,7 @@ interact_type = "show_note"
 interact_value = "I remember this..."
 
 [node name="Interactable3" parent="Interactables" instance=ExtResource("5_7eifu")]
-position = Vector2(280, 233)
+position = Vector2(371, 267)
 interact_label = "Note#3"
 interact_type = "show_note"
 interact_value = "This is a note..."
