@@ -1,7 +1,11 @@
 class_name MainMenu
 extends Control
 
+func _ready():
+	AudioManager.menu_bgm.play()
+
 func _on_play_pressed():
+	AudioManager.menu_bgm.stop()
 	get_tree().change_scene_to_file("res://scenes/level1.tscn")
 
 

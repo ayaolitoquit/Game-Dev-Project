@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://blcg6xjxdljfb"]
+[gd_scene load_steps=11 format=3 uid="uid://blcg6xjxdljfb"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_pht01"]
 [ext_resource type="Texture2D" uid="uid://nrtpr2r3ylm4" path="res://assets/Main Menu/Game.png" id="2_38b3j"]
 [ext_resource type="Texture2D" uid="uid://c1lbbcewyym1h" path="res://assets/Main Menu/Play button.png" id="3_1u32b"]
 [ext_resource type="Texture2D" uid="uid://dmrww2lqh7c6m" path="res://assets/Main Menu/Settings button.png" id="3_mk5ua"]
+[ext_resource type="Texture2D" uid="uid://dr28dksxafgqn" path="res://assets/Main Menu/hover buttons/Hover Settings.png" id="4_ji357"]
 [ext_resource type="Texture2D" uid="uid://b6ekt05ihiwnq" path="res://assets/Main Menu/Credits button.png" id="4_xb3nm"]
+[ext_resource type="Texture2D" uid="uid://c1egsa6aedbxi" path="res://assets/Main Menu/hover buttons/Hover Play.png" id="5_c5hxq"]
 [ext_resource type="Texture2D" uid="uid://wdxbr5mr63t7" path="res://assets/Main Menu/Exit button.png" id="5_ggmlo"]
+[ext_resource type="Texture2D" uid="uid://dgoynqf01w6nh" path="res://assets/Main Menu/hover buttons/Hover Credits.png" id="8_dv1hd"]
+[ext_resource type="Texture2D" uid="uid://bqdpg0mungq24" path="res://assets/Main Menu/hover buttons/Hover Exit.png" id="10_4wldc"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -56,6 +60,8 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 size_flags_vertical = 8
 texture_normal = ExtResource("3_mk5ua")
+texture_pressed = ExtResource("4_ji357")
+texture_hover = ExtResource("4_ji357")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -72,6 +78,8 @@ alignment = 1
 custom_minimum_size = Vector2(220, 75)
 layout_mode = 2
 texture_normal = ExtResource("3_1u32b")
+texture_pressed = ExtResource("5_c5hxq")
+texture_hover = ExtResource("5_c5hxq")
 ignore_texture_size = true
 stretch_mode = 0
 
@@ -79,6 +87,8 @@ stretch_mode = 0
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 texture_normal = ExtResource("4_xb3nm")
+texture_pressed = ExtResource("8_dv1hd")
+texture_hover = ExtResource("8_dv1hd")
 ignore_texture_size = true
 stretch_mode = 5
 
@@ -86,6 +96,8 @@ stretch_mode = 5
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
 texture_normal = ExtResource("5_ggmlo")
+texture_pressed = ExtResource("10_4wldc")
+texture_hover = ExtResource("10_4wldc")
 ignore_texture_size = true
 stretch_mode = 5
 
