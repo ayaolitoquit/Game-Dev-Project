@@ -2,13 +2,19 @@ class_name Player extends CharacterBody2D
 
 @onready var all_interactions = []
 @onready var interact_label = $InteractionComponents/InteractLabel
+@onready var level1timer = $Timer
+@onready var papers = $"../papers"
+
 
 var move_speed : float = 100.0
 var paper_complete := false
 
+var paperScene = preload("res://scenes/level_1_paper.tscn")
+
 func _ready():
 	update_interactions()
 	Game.connect("paper_iscomplete", paper_completed)
+	store_initial_item_states()
 	
 func _process(_delta):
 	
@@ -28,7 +34,6 @@ func _physics_process(_delta):
 
 #Interaction (items)
 #################################
-
 func _on_interaction_area_area_entered(area):
 	all_interactions.insert(0, area)
 	update_interactions()
@@ -49,18 +54,45 @@ func execute_interaction():
 		var cur_interaction = all_interactions[0]
 		match cur_interaction.interact_type:
 			"show_note": 
-#todo: pass interact_value to signal that ui hears, pass to dialogue box
 				Game.items_interacted.emit(str(cur_interaction.interact_value))
 				print(cur_interaction.interact_value)
 				if interact_label.text == str("Wedding Photo"):
+					level1timer.start()
+					Game.disappear_papers.emit()
 					Game.wedding_photo_interacted.emit()
 			"show_description": print(cur_interaction.interact_value)
 			"interactable": 
+				###DONT KNOW WHATS THIS
 				if paper_complete:
 					print("paper completed - show code")
 				else:
 					print("di pa tapos!")
-				
 
+##############################################################
 func paper_completed():
 	paper_complete = true
+	level1timer.one_shot = false
+
+var initial_item_states = []
+
+func store_initial_item_states():
+	## Store the initial state and position of each item
+	for item in papers.get_children():
+		initial_item_states.append({
+			"scene": paperScene,
+			"position": item.global_position
+		})
+		print(initial_item_states)
+	pass
+
+func _on_timer_timeout():
+	print("timeout!")
+	if paper_complete == false:
+		Game.paper_collected = 0
+		Game.level1paper_reset.emit()
+		#respawn_papers()
+		Game.respawn_paper.emit(initial_item_states)
+		Game.wedding_photo_interacted.emit()
+		level1timer.start()
+		
+

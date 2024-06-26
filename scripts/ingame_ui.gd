@@ -17,6 +17,8 @@ func _ready():
 	Game.connect("paper_iscollected", collectpaper)
 	Game.connect("wedding_photo_interacted", wedphoto_interacted)
 	Game.connect("items_interacted", item_description)
+	Game.connect("level1paper_reset", paper_reset)
+	
 	mission_1.visible = false
 	mission_1.text = quests[quest_counter]
 	dialouge_box.visible = false
@@ -49,6 +51,9 @@ func item_description(string):
 	dialouge_box.visible = true
 	item_label.text = string
 
+func paper_reset():
+	paper_collected = 0
+	counter.text = str(paper_collected) + "/9"
 
 func _on_timer_timeout():
 	dialouge_box.visible = false
