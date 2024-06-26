@@ -28,10 +28,13 @@ func paper_disappear():
 func _on_body_entered(body):
 	if body.name == "Player":
 		body_detected = true
+		#shader_material.shader = load("res://sample_assets/shaders/asset-library-2D-outline-shader-4-b41ecb704f260c3f04b35b19837ace0f89cb092d/outline.gdshader")
+		
 
 func _on_body_exited(body):
 	if body.name == "Player":
 		body_detected = false
+		#shader_material.shader = null
 
 func wedphoto_interacted():
 	is_wedphoto_interacted = true

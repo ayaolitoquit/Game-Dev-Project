@@ -4,12 +4,13 @@ class_name Player extends CharacterBody2D
 @onready var interact_label = $InteractionComponents/InteractLabel
 @onready var level1timer = $Timer
 @onready var papers = $"../papers"
+@onready var animations = $animations
 
 
 var move_speed : float = 100.0
 var paper_complete := false
-
 var paperScene = preload("res://scenes/level_1_paper.tscn")
+var input = Vector2.ZERO
 
 func _ready():
 	update_interactions()
@@ -21,12 +22,25 @@ func _process(_delta):
 	var direction : Vector2 = Vector2.ZERO
 	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+	update_animation()
 	
 	velocity = direction * move_speed
-	pass
 	
 	if Input.is_action_just_pressed("interact"):
 		execute_interaction()
+
+func update_animation():
+	var direction = "down"
+	if Input.get_action_strength("left"):
+		animations.play("run_left")
+	elif  Input.get_action_strength("right"):
+		animations.play("run_right")
+	elif Input.get_action_strength("up"):
+		animations.play("run_up")
+	elif Input.get_action_strength("down"):
+		animations.play("run_down")
+	else:
+		animations.play("idle")
 
 func _physics_process(_delta):
 	move_and_slide()
