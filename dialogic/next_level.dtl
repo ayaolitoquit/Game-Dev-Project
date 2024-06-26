@@ -1,0 +1,2 @@
+if {level} == "level1":
+	The bathroom door seemed to open.

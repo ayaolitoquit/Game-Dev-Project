@@ -1,0 +1,2 @@
+if {level} == "level1":
+	The broken pieces faded. Try collecting again

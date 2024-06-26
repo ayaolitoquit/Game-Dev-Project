@@ -210,17 +210,16 @@ shape = SubResource("CapsuleShape2D_inqos")
 z_index = 1
 
 [node name="InteractLabel" type="Label" parent="InteractionComponents"]
-offset_left = -24.5469
-offset_top = -17.2351
-offset_right = 173.453
-offset_bottom = 1.76492
-scale = Vector2(0.25, 0.25)
+offset_left = 9.40095
+offset_top = -5.74503
+offset_right = 123.401
+offset_bottom = 63.255
+scale = Vector2(0.213618, 0.213618)
 size_flags_horizontal = 2
 theme_override_fonts/font = ExtResource("3_a38b1")
-theme_override_font_sizes/font_size = 14
 text = "text"
 horizontal_alignment = 1
-vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="InteractionArea" type="Area2D" parent="InteractionComponents"]
 collision_layer = 0
@@ -232,8 +231,33 @@ position = Vector2(-5.96046e-08, 0)
 scale = Vector2(1.00773, 1.05963)
 shape = SubResource("CircleShape2D_ot1jq")
 
+[node name="Control" type="Control" parent="InteractionComponents"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.3242
+offset_top = -8.87867
+offset_right = 19.3242
+offset_bottom = -8.87867
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Interact_tooltip" type="Label" parent="InteractionComponents/Control"]
+layout_mode = 1
+offset_top = -1.0
+offset_right = 27.0
+offset_bottom = 20.0
+scale = Vector2(0.185324, 0.211715)
+theme_override_fonts/font = ExtResource("3_a38b1")
+text = "[E]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Timer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 60.0
 one_shot = true
 
 [connection signal="area_entered" from="InteractionComponents/InteractionArea" to="." method="_on_interaction_area_area_entered"]

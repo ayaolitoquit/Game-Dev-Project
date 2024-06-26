@@ -12,10 +12,10 @@ scale = Vector2(1.12861, 1.12861)
 collision_mask = 2
 script = ExtResource("1_kr2ju")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="piece" type="Sprite2D" parent="."]
 texture = ExtResource("2_85nsj")
 region_enabled = true
-region_rect = Rect2(51.8932, 274.43, 7.96954, 11.1633)
+region_rect = Rect2(259.375, 97.4583, 11.6212, 11.0807)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4.76837e-07)

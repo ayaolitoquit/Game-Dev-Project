@@ -1,7 +1,9 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhlyxse2u0tep"]
 
 [ext_resource type="Script" path="res://scripts/interactable.gd" id="1_2gak1"]
-[ext_resource type="Texture2D" uid="uid://lvxi3v4vgpwq" path="res://assets/Level1/GDLevel1.png" id="2_82shw"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a1phx"]
+load_path = "res://.godot/imported/GDLevel1.png-50909894b0bb6f10df0b8c6d0f4f04e4.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o5pn0"]
 radius = 8.0
@@ -12,12 +14,12 @@ collision_mask = 0
 monitoring = false
 script = ExtResource("1_2gak1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_o5pn0")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -4.76837e-07)
 scale = Vector2(1.01071, 1.00312)
-texture = ExtResource("2_82shw")
+texture = SubResource("CompressedTexture2D_a1phx")
 region_enabled = true
 region_rect = Rect2(50.1869, 274.783, 10.7023, 11.1483)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_o5pn0")
