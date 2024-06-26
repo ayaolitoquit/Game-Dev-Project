@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://buch4vbl4rsj0"]
+[gd_scene load_steps=13 format=3 uid="uid://buch4vbl4rsj0"]
 
 [ext_resource type="Script" path="res://scripts/level1.gd" id="1_j0lfo"]
 [ext_resource type="Texture2D" uid="uid://d2r34smo1ry1i" path="res://sample_assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_vhuyh"]
@@ -1024,6 +1024,15 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_yi3cr")
 sources/1 = SubResource("TileSetAtlasSource_v53s8")
 
+[sub_resource type="Gradient" id="Gradient_tyoup"]
+offsets = PackedFloat32Array(0, 0.727273)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j2a33"]
+gradient = SubResource("Gradient_tyoup")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Level1" type="Node2D"]
 script = ExtResource("1_j0lfo")
 
@@ -1131,5 +1140,31 @@ layer_4/tile_data = PackedInt32Array(-458738, 786433, 5, -393202, 786433, 6, -45
 [node name="Timer" type="Timer" parent="."]
 wait_time = 20.0
 one_shot = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.380392, 0.380392, 0.380392, 1)
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
+position = Vector2(688, 368)
+texture = SubResource("GradientTexture2D_j2a33")
+texture_scale = 5.76
+
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+position = Vector2(358, 334)
+texture = SubResource("GradientTexture2D_j2a33")
+texture_scale = 5.76
+
+[node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+position = Vector2(377, 58)
+texture = SubResource("GradientTexture2D_j2a33")
+texture_scale = 5.76
+
+[node name="PointLight2D4" type="PointLight2D" parent="Lights"]
+position = Vector2(752, 203)
+scale = Vector2(0.863064, 0.778971)
+texture = SubResource("GradientTexture2D_j2a33")
+texture_scale = 5.76
 
 [connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]

@@ -105,8 +105,6 @@ func store_initial_item_states():
 			"scene": paperScene,
 			"position": item.global_position
 		})
-		print(initial_item_states)
-	pass
 
 func _on_timer_timeout():
 	print("timeout!")

@@ -29,7 +29,6 @@ func _process(_delta):
 		paper_completed()
 
 func on_paper_is_collected():
-	print("nacollect !!!")
 	paper_collected += 1
 	counter.text = str(paper_collected) + "/9"
 

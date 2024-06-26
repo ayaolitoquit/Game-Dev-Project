@@ -1,3 +1,5 @@
 {itemlabel}
-{itemlabel2}
-{itemlabel3}
+if {itemlabel2} != null:
+	{itemlabel2}
+if {itemlabel3} != null:
+	{itemlabel3}
