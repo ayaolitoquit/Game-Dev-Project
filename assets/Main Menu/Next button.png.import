@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2f1b1jejw36f"
-path="res://.godot/imported/3.png-d95a916ed9bb9560745c7e7477e310b4.ctex"
+uid="uid://djvtvin1tnml4"
+path="res://.godot/imported/Next button.png-ff444e9d11c7083fa3b8933d621c34cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Level1/cutscenes/3.png"
-dest_files=["res://.godot/imported/3.png-d95a916ed9bb9560745c7e7477e310b4.ctex"]
+source_file="res://assets/Main Menu/Next button.png"
+dest_files=["res://.godot/imported/Next button.png-ff444e9d11c7083fa3b8933d621c34cd.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tvfc46lteps0"
-path="res://.godot/imported/Wife apparition.jpeg-2f9697e4de3a18f4024ee2db713b5dbd.ctex"
+uid="uid://5bcxvd7ub30u"
+path="res://.godot/imported/2.png-8d20e2a9fd6fcfe2b5299ef856607cd4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Level1/cutscenes/Wife apparition.jpeg"
-dest_files=["res://.godot/imported/Wife apparition.jpeg-2f9697e4de3a18f4024ee2db713b5dbd.ctex"]
+source_file="res://assets/cutscenes/level1/2.png"
+dest_files=["res://.godot/imported/2.png-8d20e2a9fd6fcfe2b5299ef856607cd4.ctex"]
 
 [params]
 

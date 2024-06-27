@@ -18,8 +18,8 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 Game="*res://scripts/Global/Game.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 AudioManager="*res://scenes/audio_manager.tscn"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
 
@@ -30,6 +30,7 @@ directories/dtl_directory={
 "alert": "res://dialogic/alert.dtl",
 "item_interact": "res://dialogic/item_interact.dtl",
 "level1cutscene1": "res://assets/fonts/Silkscreen/level1cutscene1.dtl",
+"level2cutscene": "res://assets/cutscenes/level1/level2cutscene.dtl",
 "next_level": "res://dialogic/next_level.dtl",
 "progress_next_level": "res://assets/fonts/Silkscreen/progress_next_level.dtl"
 }
@@ -40,8 +41,8 @@ variables={
 "level": "",
 "yesNo_choice": false
 }
-layout/style_list=["res://dialogic/dialogue style.tres"]
-layout/default_style="res://dialogic/dialogue style.tres"
+layout/style_list=[]
+layout/default_style=""
 glossary/default_case_sensitive=true
 text/letter_speed=0.01
 text/initial_text_reveal_skippable=true

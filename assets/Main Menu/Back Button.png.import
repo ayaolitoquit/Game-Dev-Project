@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6ay4btxu8k73"
-path="res://.godot/imported/Table with alcohols.jpeg-bc1a2b0e0d7321796674100b196d6e20.ctex"
+uid="uid://7edilwyo25cc"
+path="res://.godot/imported/Back Button.png-c2a4228bf9ffb9dae999e2e72e7297ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Level1/cutscenes/Table with alcohols.jpeg"
-dest_files=["res://.godot/imported/Table with alcohols.jpeg-bc1a2b0e0d7321796674100b196d6e20.ctex"]
+source_file="res://assets/Main Menu/Back Button.png"
+dest_files=["res://.godot/imported/Back Button.png-c2a4228bf9ffb9dae999e2e72e7297ef.ctex"]
 
 [params]
 

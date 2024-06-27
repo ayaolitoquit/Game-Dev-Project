@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://blcg6xjxdljfb"]
+[gd_scene load_steps=20 format=3 uid="uid://blcg6xjxdljfb"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_pht01"]
 [ext_resource type="Texture2D" uid="uid://nrtpr2r3ylm4" path="res://assets/Main Menu/Game.png" id="2_38b3j"]
@@ -9,7 +9,16 @@
 [ext_resource type="Texture2D" uid="uid://c1egsa6aedbxi" path="res://assets/Main Menu/hover buttons/Hover Play.png" id="5_c5hxq"]
 [ext_resource type="Texture2D" uid="uid://wdxbr5mr63t7" path="res://assets/Main Menu/Exit button.png" id="5_ggmlo"]
 [ext_resource type="Texture2D" uid="uid://dgoynqf01w6nh" path="res://assets/Main Menu/hover buttons/Hover Credits.png" id="8_dv1hd"]
+[ext_resource type="Texture2D" uid="uid://djuyy8quh0ygr" path="res://assets/Main Menu/Tutorial button.png" id="9_thmk4"]
+[ext_resource type="Texture2D" uid="uid://ca827cwshsnyg" path="res://assets/Main Menu/hover buttons/Hover Tutorial button.png" id="10_0ui7d"]
 [ext_resource type="Texture2D" uid="uid://bqdpg0mungq24" path="res://assets/Main Menu/hover buttons/Hover Exit.png" id="10_4wldc"]
+[ext_resource type="Texture2D" uid="uid://g8fqvp2hs8w5" path="res://assets/Main Menu/Animation - In Game.png" id="13_p31wq"]
+[ext_resource type="Texture2D" uid="uid://7edilwyo25cc" path="res://assets/Main Menu/Back Button.png" id="14_0pjkn"]
+[ext_resource type="Texture2D" uid="uid://b5h5im05vvboh" path="res://assets/Main Menu/hover buttons/Hover Back button.png" id="15_dobgr"]
+[ext_resource type="Texture2D" uid="uid://wltubufv0e4g" path="res://assets/Main Menu/Skip button.png" id="15_oycv0"]
+[ext_resource type="Texture2D" uid="uid://bd8470bf4ar5i" path="res://assets/Main Menu/hover buttons/Hover Skip.png" id="16_qdngo"]
+[ext_resource type="Texture2D" uid="uid://djvtvin1tnml4" path="res://assets/Main Menu/Next button.png" id="17_2a2xp"]
+[ext_resource type="Texture2D" uid="uid://bahd3uujnu1j3" path="res://assets/Main Menu/hover buttons/Hover Next.png" id="18_a3g3g"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -92,6 +101,15 @@ texture_hover = ExtResource("8_dv1hd")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="Tutorial" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(75, 75)
+layout_mode = 2
+texture_normal = ExtResource("9_thmk4")
+texture_pressed = ExtResource("10_0ui7d")
+texture_hover = ExtResource("10_0ui7d")
+ignore_texture_size = true
+stretch_mode = 5
+
 [node name="Exit" type="TextureButton" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(75, 75)
 layout_mode = 2
@@ -101,5 +119,74 @@ texture_hover = ExtResource("10_4wldc")
 ignore_texture_size = true
 stretch_mode = 5
 
+[node name="Tutorial Panel" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_p31wq")
+
+[node name="Panel" type="Panel" parent="Tutorial Panel"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Tutorial Panel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Tutorial Panel/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 490
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Tutorial Panel/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 404
+
+[node name="Back button" type="TextureButton" parent="Tutorial Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("14_0pjkn")
+texture_pressed = ExtResource("15_dobgr")
+texture_hover = ExtResource("15_dobgr")
+
+[node name="TextureRect" type="TextureRect" parent="Tutorial Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("9_thmk4")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Tutorial Panel/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 900
+
+[node name="TextureButton" type="TextureButton" parent="Tutorial Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("15_oycv0")
+texture_pressed = ExtResource("16_qdngo")
+texture_hover = ExtResource("16_qdngo")
+
+[node name="TextureButton2" type="TextureButton" parent="Tutorial Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("17_2a2xp")
+texture_pressed = ExtResource("18_a3g3g")
+texture_hover = ExtResource("18_a3g3g")
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Tutorial Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer/Back button" to="." method="_on_back_button_pressed"]

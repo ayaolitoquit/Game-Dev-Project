@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dl53n103ugf8j"
-path="res://.godot/imported/1.png-98272ef05f861a172ecabaf172b0ab79.ctex"
+uid="uid://b5h5im05vvboh"
+path="res://.godot/imported/Hover Back button.png-a0e70b32aa8f34f1c869ae5d1cb8bbbe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Level1/cutscenes/1.png"
-dest_files=["res://.godot/imported/1.png-98272ef05f861a172ecabaf172b0ab79.ctex"]
+source_file="res://assets/Main Menu/hover buttons/Hover Back button.png"
+dest_files=["res://.godot/imported/Hover Back button.png-a0e70b32aa8f34f1c869ae5d1cb8bbbe.ctex"]
 
 [params]
 

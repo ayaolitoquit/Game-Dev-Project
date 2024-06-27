@@ -1,34 +1,34 @@
-[background arg="res://assets/Level1/cutscenes/1.png" fade="0.0"]
+[background arg="res://assets/cutscenes/level1/1.png" fade="0.0"]
 [wait time="0.6"]
-[background arg="res://assets/Level1/cutscenes/2.png" fade="0.0"]
+[background arg="res://assets/cutscenes/level1/2.png" fade="0.0"]
 [wait time="0.7"]
-[background arg="res://assets/Level1/cutscenes/3.png" fade="0.0"]
+[background arg="res://assets/cutscenes/level1/3.png" fade="0.0"]
 [wait time="0.5"]
-[background arg="res://assets/Level1/cutscenes/2.png" fade="0.0"]
+[background arg="res://assets/cutscenes/level1/2.png" fade="0.0"]
 [wait time="0.5"]
-[background arg="res://assets/Level1/cutscenes/4.png" fade="0.0"]
+[background arg="res://assets/cutscenes/level1/4.png" fade="0.0"]
 [wait time="1.0"]
-[background arg="res://assets/Level1/cutscenes/5.png" fade="0.0"]
+[background arg="res://assets/cutscenes/level1/5.png" fade="0.0"]
 Ugh... What happened?
 My head feels like it’s going to split open...
-[background arg="res://assets/Level1/cutscenes/4.png" fade="0.0"]
+[background arg="res://assets/cutscenes/level1/4.png" fade="0.0"]
 [wait time="1.0"]
-[background arg="res://assets/Level1/cutscenes/5.png" fade="0.0"]
+[background arg="res://assets/cutscenes/level1/5.png" fade="0.0"]
 Another night drowning in this poison.
 It doesn’t help. Nothing helps. The pain is still here, gnawing at me.
 I thought maybe if I drank enough, I could forget...
 but how can I forget? The love of my life is gone.
 That fight... our last words...
-[background arg="res://assets/Level1/cutscenes/6.png" fade="0.0"]
+[background arg="res://assets/cutscenes/level1/6.png" fade="0.0"]
 [wait time="1.0"]
-[background arg="res://assets/Level1/cutscenes/5.png" fade="0.0"]
+[background arg="res://assets/cutscenes/level1/5.png" fade="0.0"]
 [wait time="0.5"]
-[background arg="res://assets/Level1/cutscenes/4.png" fade="0.0"]
+[background arg="res://assets/cutscenes/level1/4.png" fade="0.0"]
 [wait time="0.5"]
 Wait...what was that?
-[background arg="res://assets/Level1/cutscenes/6.png" fade="0.0"]
+[background arg="res://assets/cutscenes/level1/6.png" fade="0.0"]
 [wait time="1.0"]
-[background arg="res://assets/Level1/cutscenes/Wife apparition.jpeg" fade="0.0"]
+[background arg="res://assets/cutscenes/level1/Wife apparition.jpeg" fade="0.0"]
 Was it you? Are you... are you here?
 [wait time="1.0"]
 Please, don’t leave me. I need you. I can’t do this alone...

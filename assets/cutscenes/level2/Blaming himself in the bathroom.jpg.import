@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5bcxvd7ub30u"
-path="res://.godot/imported/2.png-be0a4fd2c3bd9ccaf2fa2cb3b0db5bc0.ctex"
+uid="uid://cxbitmhjwx4yp"
+path="res://.godot/imported/Blaming himself in the bathroom.jpg-4eb70cbf51c5a86b93fcbf9fd201c1c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Level1/cutscenes/2.png"
-dest_files=["res://.godot/imported/2.png-be0a4fd2c3bd9ccaf2fa2cb3b0db5bc0.ctex"]
+source_file="res://assets/cutscenes/level2/Blaming himself in the bathroom.jpg"
+dest_files=["res://.godot/imported/Blaming himself in the bathroom.jpg-4eb70cbf51c5a86b93fcbf9fd201c1c7.ctex"]
 
 [params]
 
