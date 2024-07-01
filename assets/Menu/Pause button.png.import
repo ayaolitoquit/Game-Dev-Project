@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bd8470bf4ar5i"
-path="res://.godot/imported/Hover Skip.png-f74036ed1727d595006d01b9b9177b3a.ctex"
+uid="uid://c31l8ov4vkwh0"
+path="res://.godot/imported/Pause button.png-8fde0e59808d04539a8829da18fc84f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Main Menu/hover buttons/Hover Skip.png"
-dest_files=["res://.godot/imported/Hover Skip.png-f74036ed1727d595006d01b9b9177b3a.ctex"]
+source_file="res://assets/Menu/Pause button.png"
+dest_files=["res://.godot/imported/Pause button.png-8fde0e59808d04539a8829da18fc84f1.ctex"]
 
 [params]
 

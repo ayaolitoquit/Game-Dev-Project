@@ -15,7 +15,7 @@ func _on_exit_pressed():
 
 
 func _on_tutorial_pressed():
-	tutorial_panel.visible = true
+	tutorial_panel.show()
 
 func _on_back_button_pressed():
-	tutorial_panel.visible = false
+	tutorial_panel.hide()

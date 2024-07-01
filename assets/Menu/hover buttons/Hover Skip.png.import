@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqdpg0mungq24"
-path="res://.godot/imported/Hover Exit.png-ca80b7ffce46ef7089b553c4a7ee8151.ctex"
+uid="uid://bd8470bf4ar5i"
+path="res://.godot/imported/Hover Skip.png-8f83da441817e625439b26107c00e8d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Main Menu/hover buttons/Hover Exit.png"
-dest_files=["res://.godot/imported/Hover Exit.png-ca80b7ffce46ef7089b553c4a7ee8151.ctex"]
+source_file="res://assets/Menu/hover buttons/Hover Skip.png"
+dest_files=["res://.godot/imported/Hover Skip.png-8f83da441817e625439b26107c00e8d6.ctex"]
 
 [params]
 

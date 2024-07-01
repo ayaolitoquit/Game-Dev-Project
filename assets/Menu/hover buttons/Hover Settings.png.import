@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn0l2xx7m0odt"
-path="res://.godot/imported/Hover Quit to MainMenu.png-8db16df36ba2e1af2e8152aee3743e72.ctex"
+uid="uid://dr28dksxafgqn"
+path="res://.godot/imported/Hover Settings.png-327e06fc2d909b75aea9b339a8828a8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Main Menu/hover buttons/Hover Quit to MainMenu.png"
-dest_files=["res://.godot/imported/Hover Quit to MainMenu.png-8db16df36ba2e1af2e8152aee3743e72.ctex"]
+source_file="res://assets/Menu/hover buttons/Hover Settings.png"
+dest_files=["res://.godot/imported/Hover Settings.png-327e06fc2d909b75aea9b339a8828a8a.ctex"]
 
 [params]
 

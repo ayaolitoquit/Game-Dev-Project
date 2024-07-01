@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://g8fqvp2hs8w5"
-path="res://.godot/imported/Animation - In Game.png-1607ea6f5c3d9a11fa4593ff9e7dbc9e.ctex"
+uid="uid://bw7tt6vdbkw36"
+path="res://.godot/imported/Restart button.png-38b607d882999315baab1f34a22b0683.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Main Menu/Animation - In Game.png"
-dest_files=["res://.godot/imported/Animation - In Game.png-1607ea6f5c3d9a11fa4593ff9e7dbc9e.ctex"]
+source_file="res://assets/Menu/Restart button.png"
+dest_files=["res://.godot/imported/Restart button.png-38b607d882999315baab1f34a22b0683.ctex"]
 
 [params]
 

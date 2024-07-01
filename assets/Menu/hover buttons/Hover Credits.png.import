@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6ekt05ihiwnq"
-path="res://.godot/imported/Credits button.png-b45e6abfa28149ee01a6756be6e55006.ctex"
+uid="uid://dgoynqf01w6nh"
+path="res://.godot/imported/Hover Credits.png-28389425fdbf41c4317e97b1a1a2b346.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Main Menu/Credits button.png"
-dest_files=["res://.godot/imported/Credits button.png-b45e6abfa28149ee01a6756be6e55006.ctex"]
+source_file="res://assets/Menu/hover buttons/Hover Credits.png"
+dest_files=["res://.godot/imported/Hover Credits.png-28389425fdbf41c4317e97b1a1a2b346.ctex"]
 
 [params]
 

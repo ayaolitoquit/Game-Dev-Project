@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://p5c8ajhgnq62"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_1j83i"]
+[ext_resource type="Texture2D" uid="uid://bp87752knw0si" path="res://assets/Menu/Pause Menu Screen.png" id="2_wtswh"]
+[ext_resource type="Texture2D" uid="uid://b7v0dcr3e8vil" path="res://assets/Menu/Resume button.png" id="3_ypfwq"]
+[ext_resource type="Texture2D" uid="uid://djm7p7idt4vic" path="res://assets/Menu/hover buttons/Hover Resume.png" id="4_awhsd"]
+[ext_resource type="Texture2D" uid="uid://bw7tt6vdbkw36" path="res://assets/Menu/Restart button.png" id="5_yki2w"]
+[ext_resource type="Texture2D" uid="uid://dfc0f76tqh7ix" path="res://assets/Menu/hover buttons/Hover Restart.png" id="6_rfbj0"]
+[ext_resource type="Texture2D" uid="uid://bvphjsxut7ss4" path="res://assets/Menu/QuitToMainMenu button.png" id="7_0ej5j"]
+[ext_resource type="Texture2D" uid="uid://bn0l2xx7m0odt" path="res://assets/Menu/hover buttons/Hover Quit to MainMenu.png" id="8_5x431"]
+[ext_resource type="Texture2D" uid="uid://dmrww2lqh7c6m" path="res://assets/Menu/Settings button.png" id="9_yvch6"]
+[ext_resource type="Texture2D" uid="uid://dr28dksxafgqn" path="res://assets/Menu/hover buttons/Hover Settings.png" id="10_1xgop"]
+
+[node name="pause" type="Node2D"]
+process_mode = 2
+visible = false
+script = ExtResource("1_1j83i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_wtswh")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 280
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 280
+theme_override_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+alignment = 1
+
+[node name="Resume" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_ypfwq")
+texture_pressed = ExtResource("4_awhsd")
+texture_hover = ExtResource("4_awhsd")
+
+[node name="Restart" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_yki2w")
+texture_pressed = ExtResource("6_rfbj0")
+texture_hover = ExtResource("6_rfbj0")
+
+[node name="QuitToMainMenu" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("7_0ej5j")
+texture_pressed = ExtResource("8_5x431")
+texture_hover = ExtResource("8_5x431")
+
+[node name="Settings" type="TextureButton" parent="CanvasLayer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("9_yvch6")
+texture_pressed = ExtResource("10_1xgop")
+texture_hover = ExtResource("10_1xgop")
+ignore_texture_size = true
+stretch_mode = 4
+
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/QuitToMainMenu" to="." method="_on_quit_to_main_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]

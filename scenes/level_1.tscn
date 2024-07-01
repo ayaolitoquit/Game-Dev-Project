@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://buch4vbl4rsj0"]
+[gd_scene load_steps=14 format=3 uid="uid://buch4vbl4rsj0"]
 
 [ext_resource type="Script" path="res://scripts/level1.gd" id="1_75h12"]
 [ext_resource type="PackedScene" uid="uid://d2ykemmyhdq57" path="res://scenes/player.tscn" id="2_n0paf"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bhlyxse2u0tep" path="res://scenes/interactable.tscn" id="5_usbgp"]
 [ext_resource type="Texture2D" uid="uid://d2r34smo1ry1i" path="res://sample_assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png" id="6_b6d4y"]
 [ext_resource type="Texture2D" uid="uid://lvxi3v4vgpwq" path="res://assets/Level1/GDLevel1.png" id="7_1i0x0"]
+[ext_resource type="PackedScene" uid="uid://p5c8ajhgnq62" path="res://scenes/pause_menu.tscn" id="8_i6rwv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yi3cr"]
 texture = ExtResource("6_b6d4y")
@@ -1050,20 +1051,26 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="Level1" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_75h12")
 
 [node name="Player" parent="." instance=ExtResource("2_n0paf")]
+process_mode = 1
 position = Vector2(317, 360)
 collision_layer = 10
 collision_mask = 9
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+process_mode = 1
 position = Vector2(0, 5)
 zoom = Vector2(4, 4)
 
 [node name="UI" parent="." instance=ExtResource("3_8mmoh")]
+process_mode = 1
+quests = PackedStringArray("Collect the broken pieces of the wedding photo before they fade away", "Go to the bathroom")
 
 [node name="pieces" type="Node" parent="."]
+process_mode = 1
 
 [node name="level1_paper7" parent="pieces" instance=ExtResource("4_4q88b")]
 position = Vector2(609, 277)
@@ -1093,9 +1100,11 @@ position = Vector2(186, 232)
 position = Vector2(565, 340)
 
 [node name="Interactables" type="Node2D" parent="."]
+process_mode = 1
 z_index = 2
 
 [node name="Wedding Photo" parent="Interactables" instance=ExtResource("5_usbgp")]
+process_mode = 1
 visible = false
 position = Vector2(663, 326)
 scale = Vector2(4.95846, 2.85714)
@@ -1106,6 +1115,7 @@ interact_value2 = " I thought we had forever. This can't be real... it must be a
 interact_value3 = "Any moment now, I’ll wake up and you’ll be here."
 
 [node name="Bathroom Door" parent="Interactables" instance=ExtResource("5_usbgp")]
+process_mode = 1
 visible = false
 position = Vector2(589, 34)
 scale = Vector2(2.47818, 4.37482)
@@ -1114,6 +1124,7 @@ interact_type = "next_level"
 interact_value = "Do you wanna go inside?"
 
 [node name="Interactable2" parent="Interactables" instance=ExtResource("5_usbgp")]
+process_mode = 1
 position = Vector2(199, 39)
 rotation = -0.945977
 interact_label = "Old Journal"
@@ -1123,6 +1134,7 @@ interact_value2 = "We used to write in this together, dreaming about our future.
 interact_value3 = "Those dreams died with you. But maybe if I keep writing, you’ll come back and we can finish it together."
 
 [node name="Interactable3" parent="Interactables" instance=ExtResource("5_usbgp")]
+process_mode = 1
 position = Vector2(372, 234)
 interact_label = "Remote Control"
 interact_type = "show_note"
@@ -1131,6 +1143,7 @@ interact_value2 = "Now, the silence is deafening."
 interact_value3 = "But if I wait long enough, maybe you’ll sit beside me again and we can watch something together."
 
 [node name="Interactable" parent="Interactables" instance=ExtResource("5_usbgp")]
+process_mode = 1
 position = Vector2(833, 240)
 interact_label = "Wedding Album"
 interact_type = "show_note"
@@ -1139,6 +1152,7 @@ interact_value2 = "How did we go from that to this? I wish I could go back and h
 interact_value3 = "This can’t be real. You’re not gone. I’ll turn the page and you’ll be right here with me."
 
 [node name="TileMap" type="TileMap" parent="."]
+process_mode = 1
 position = Vector2(167, 513)
 scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_1qc2y")
@@ -1155,33 +1169,42 @@ layer_4/name = "Extra"
 layer_4/tile_data = PackedInt32Array(-458738, 786433, 5, -393202, 786433, 6, -458737, 851969, 5, -393201, 851969, 6, -458736, 917505, 5, -393200, 917505, 6, -393195, 655361, 15, -327659, 655361, 16, -524267, 393217, 11, -720882, 1, 11, -720881, 65537, 11, -720880, 131073, 11, -655343, 196609, 12, -655342, 262145, 12, -655341, 262145, 9, -655340, 327681, 9, -655339, 393217, 9, -655338, 458753, 9, -720875, 786433, 16, -720876, 327681, 8, -720878, 262145, 11, -720879, 196609, 11, -655344, 131073, 12, -655345, 65537, 12, -589809, 65537, 13, -589810, 1, 13, -524274, 1, 14, -524273, 65537, 14, -589808, 131073, 13, -589807, 196609, 13, -524272, 131073, 14, -524271, 196609, 14, -524270, 262145, 14, -589805, 262145, 10, -589806, 262145, 13, -655346, 1, 12, -589804, 327681, 10, -589803, 393217, 10, -589802, 458753, 10, -524268, 327681, 11, -1114100, 262145, 15, -1048564, 262145, 16, -1114101, 720897, 15, -1048565, 720897, 16, -1114102, 262145, 15, -1048566, 262145, 16, -393196, 786433, 15, -327660, 786433, 16, -393197, 655361, 15, -327661, 655361, 16, -655359, 720897, 15, -589823, 720897, 16, -655352, 720897, 15, -589816, 720897, 16, -327679, 720897, 15, -262143, 720897, 16, -786411, 786433, 15, -1179641, 589825, 9, -1114105, 589825, 10, -1048569, 589825, 11, -1179640, 655361, 9, -1114104, 655361, 10, -1048568, 655361, 11)
 
 [node name="Timer" type="Timer" parent="."]
+process_mode = 1
 wait_time = 20.0
 one_shot = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+process_mode = 1
 color = Color(0.380392, 0.380392, 0.380392, 1)
 
 [node name="Lights" type="Node2D" parent="."]
+process_mode = 1
 
 [node name="PointLight2D" type="PointLight2D" parent="Lights"]
+process_mode = 1
 position = Vector2(688, 368)
 texture = SubResource("GradientTexture2D_j2a33")
 texture_scale = 5.76
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lights"]
+process_mode = 1
 position = Vector2(358, 334)
 texture = SubResource("GradientTexture2D_j2a33")
 texture_scale = 5.76
 
 [node name="PointLight2D3" type="PointLight2D" parent="Lights"]
+process_mode = 1
 position = Vector2(377, 58)
 texture = SubResource("GradientTexture2D_j2a33")
 texture_scale = 5.76
 
 [node name="PointLight2D4" type="PointLight2D" parent="Lights"]
+process_mode = 1
 position = Vector2(752, 203)
 scale = Vector2(0.863064, 0.778971)
 texture = SubResource("GradientTexture2D_j2a33")
 texture_scale = 5.76
+
+[node name="pause" parent="." instance=ExtResource("8_i6rwv")]
 
 [connection signal="timeout" from="Timer" to="Player" method="_on_timer_timeout"]

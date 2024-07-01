@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://d28jninlsf4ot"]
 
 [ext_resource type="Script" path="res://scripts/ingame_ui.gd" id="1_ka0ky"]
-[ext_resource type="Texture2D" uid="uid://c31l8ov4vkwh0" path="res://assets/Main Menu/Pause button.png" id="2_hgt7f"]
 [ext_resource type="FontFile" uid="uid://c84gdatq4eyha" path="res://assets/fonts/Silkscreen/Silkscreen-Regular.ttf" id="2_ky7a8"]
+[ext_resource type="Texture2D" uid="uid://c31l8ov4vkwh0" path="res://assets/Menu/Pause button.png" id="3_n12t1"]
 
 [node name="IngameUI" type="Control"]
 layout_mode = 3
@@ -77,4 +77,4 @@ size_flags_vertical = 4
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Panel2"]
 texture_filter = 1
 position = Vector2(58, 58)
-texture = ExtResource("2_hgt7f")
+texture = ExtResource("3_n12t1")

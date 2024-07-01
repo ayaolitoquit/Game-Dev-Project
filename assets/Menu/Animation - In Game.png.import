@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djuyy8quh0ygr"
-path="res://.godot/imported/Tutorial button.png-a42cb67c2156f2b65f4351e9d01fb8f9.ctex"
+uid="uid://g8fqvp2hs8w5"
+path="res://.godot/imported/Animation - In Game.png-65fc2d4dc3c11ba39c78b9e9f358ba7a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Main Menu/Tutorial button.png"
-dest_files=["res://.godot/imported/Tutorial button.png-a42cb67c2156f2b65f4351e9d01fb8f9.ctex"]
+source_file="res://assets/Menu/Animation - In Game.png"
+dest_files=["res://.godot/imported/Animation - In Game.png-65fc2d4dc3c11ba39c78b9e9f358ba7a.ctex"]
 
 [params]
 

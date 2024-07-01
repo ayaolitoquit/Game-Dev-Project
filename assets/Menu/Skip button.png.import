@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5h5im05vvboh"
-path="res://.godot/imported/Hover Back button.png-a0e70b32aa8f34f1c869ae5d1cb8bbbe.ctex"
+uid="uid://wltubufv0e4g"
+path="res://.godot/imported/Skip button.png-0be0b29259dd38381f369c7776ab2b94.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Main Menu/hover buttons/Hover Back button.png"
-dest_files=["res://.godot/imported/Hover Back button.png-a0e70b32aa8f34f1c869ae5d1cb8bbbe.ctex"]
+source_file="res://assets/Menu/Skip button.png"
+dest_files=["res://.godot/imported/Skip button.png-0be0b29259dd38381f369c7776ab2b94.ctex"]
 
 [params]
 

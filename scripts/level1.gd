@@ -2,14 +2,28 @@ extends Node2D
 
 var instanced_item_scene = null
 const LEVEL_1_PAPER = preload("res://scenes/level_1_paper.tscn")
+@onready var pause = $pause
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
+	#_unpaused()
+	pause.hide_pause()
 	#Dialogic.start("level1cutscene1")
 	Game.connect("respawn_paper", respawn_papers)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	AudioManager.bgm.play()
+
+func _input(event):
+	if Input.is_action_just_pressed("pause"):
+		swap_pause_state()
+
+func swap_pause_state():
+	if not pause.visible:
+		pause.show_pause()
+		get_tree().paused = true
+	else:
+		get_tree().paused = false
+		pause.hide_pause()
 
 func _on_dialogic_signal(argument:String):
 	if argument == "d_next_level":

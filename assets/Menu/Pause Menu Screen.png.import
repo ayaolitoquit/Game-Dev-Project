@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1lbbcewyym1h"
-path="res://.godot/imported/Play button.png-e631f4b63817a3db0b5738a413c75cf7.ctex"
+uid="uid://bp87752knw0si"
+path="res://.godot/imported/Pause Menu Screen.png-6672e73868bc88c20985825fe291d20b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Main Menu/Play button.png"
-dest_files=["res://.godot/imported/Play button.png-e631f4b63817a3db0b5738a413c75cf7.ctex"]
+source_file="res://assets/Menu/Pause Menu Screen.png"
+dest_files=["res://.godot/imported/Pause Menu Screen.png-6672e73868bc88c20985825fe291d20b.ctex"]
 
 [params]
 

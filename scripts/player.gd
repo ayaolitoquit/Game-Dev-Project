@@ -20,7 +20,7 @@ var samplestring = ""
 
 func _ready():
 	update_interactions()
-	interact_tooltip.visible = false
+	interact_tooltip.hide()
 	if Game.current_level == 1:
 		Game.connect("paper_iscomplete", paper_completed) 
 		store_initial_item_states()
@@ -59,20 +59,18 @@ func _physics_process(_delta):
 func _on_interaction_area_area_entered(area):
 	all_interactions.insert(0, area)
 	update_interactions()
-	#interact_tooltip.visible = true
 
 
 func _on_interaction_area_area_exited(area):
-	#interact_tooltip.visible = false
 	all_interactions.erase(area)
 	update_interactions()
 
 func update_interactions():
 	if all_interactions:
-		interact_tooltip.visible = true
+		interact_tooltip.show()
 		interact_label.text = all_interactions[0].interact_label
 	else:
-		interact_tooltip.visible = false
+		interact_tooltip.hide()
 		interact_label.text = ""
 
 func execute_interaction():

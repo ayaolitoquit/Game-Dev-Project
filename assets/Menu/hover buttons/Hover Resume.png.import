@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ca827cwshsnyg"
-path="res://.godot/imported/Hover Tutorial button.png-ce07a377b8dc17d901e0066ed956b379.ctex"
+uid="uid://djm7p7idt4vic"
+path="res://.godot/imported/Hover Resume.png-9cf5f064b5de24391af714a8ca270d81.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Main Menu/hover buttons/Hover Tutorial button.png"
-dest_files=["res://.godot/imported/Hover Tutorial button.png-ce07a377b8dc17d901e0066ed956b379.ctex"]
+source_file="res://assets/Menu/hover buttons/Hover Resume.png"
+dest_files=["res://.godot/imported/Hover Resume.png-9cf5f064b5de24391af714a8ca270d81.ctex"]
 
 [params]
 

@@ -21,11 +21,11 @@ func _ready():
 	print(Game.current_level)
 	
 	if Game.current_level != 1:
-		mission_1.visible = true 
+		mission_1.show() 
 
 func _process(_delta):
 	if is_wedphoto_interacted:
-		mission_1.visible = true
+		mission_1.show()
 	
 	#collect broken pieces
 	if paper_collected == 9:
@@ -39,7 +39,7 @@ func on_wedding_photo_interacted(label):
 	Dialogic.VAR.itemlabel = label
 	Dialogic.start("interactable_item")
 	is_wedphoto_interacted = true
-	counter.visible = true
+	counter.show()
 
 func on_items_interacted(label1, label2, label3):
 	Dialogic.VAR.itemlabel = label1
@@ -60,7 +60,7 @@ func paper_completed():
 	Game.emit_signal("paper_iscomplete")
 	quest_counter += 1
 	mission_1.text = quests[quest_counter]
-	counter.visible = false
+	counter.hide()
 	paper_collected = 0
 	Dialogic.start("next_level")
 	Dialogic.VAR.level = "level1"
