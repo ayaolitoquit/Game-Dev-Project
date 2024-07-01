@@ -1,0 +1,3 @@
+# for interactable items with function e.g. wedding photo(starts the mission)
+if {itemlabel} != "null":
+	{itemlabel}

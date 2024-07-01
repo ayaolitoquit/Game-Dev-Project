@@ -1,5 +1,14 @@
-{itemlabel}
-if {itemlabel2} != null:
-	{itemlabel2}
+if {itemlabel} != null:
+	{itemlabel}
+	if {itemlabel2} != null:
+		jump label2
+	else:
+		[end_timeline]
+label label2
+{itemlabel2}
 if {itemlabel3} != null:
-	{itemlabel3}
+	jump label3
+label label3
+{itemlabel3}
+[signal arg="teleport"]
+[end_timeline]

@@ -7,7 +7,7 @@ func _ready():
 
 func _on_play_pressed():
 	AudioManager.menu_bgm.stop()
-	get_tree().change_scene_to_file("res://scenes/level1.tscn")
+	get_tree().change_scene_to_file("res://scenes/level_1.tscn")
 
 
 func _on_exit_pressed():

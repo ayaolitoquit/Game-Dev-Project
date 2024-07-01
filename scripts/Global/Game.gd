@@ -6,7 +6,7 @@ var current_level = 1
 
 signal paper_is_collected
 signal paper_iscomplete
-signal wedding_photo_interacted
+signal wedding_photo_interacted(string)
 signal items_interacted(string)
 signal level1paper_reset
 signal respawn_paper(initial_item_states: Array)

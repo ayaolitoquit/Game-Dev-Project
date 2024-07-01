@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=3 uid="uid://buch4vbl4rsj0"]
 
-[ext_resource type="Script" path="res://scripts/level1.gd" id="1_j0lfo"]
-[ext_resource type="Texture2D" uid="uid://d2r34smo1ry1i" path="res://sample_assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_vhuyh"]
-[ext_resource type="PackedScene" uid="uid://d2ykemmyhdq57" path="res://scenes/player.tscn" id="2_7xpuj"]
-[ext_resource type="Texture2D" uid="uid://lvxi3v4vgpwq" path="res://assets/Level1/GDLevel1.png" id="2_j7moe"]
-[ext_resource type="PackedScene" uid="uid://lh8m4ss0mrvw" path="res://scenes/level_1_paper.tscn" id="3_kbkyt"]
-[ext_resource type="PackedScene" uid="uid://d28jninlsf4ot" path="res://scenes/ingame_ui.tscn" id="4_3w26x"]
-[ext_resource type="PackedScene" uid="uid://bhlyxse2u0tep" path="res://scenes/interactable.tscn" id="5_7eifu"]
+[ext_resource type="Script" path="res://scripts/level1.gd" id="1_75h12"]
+[ext_resource type="PackedScene" uid="uid://d2ykemmyhdq57" path="res://scenes/player.tscn" id="2_n0paf"]
+[ext_resource type="PackedScene" uid="uid://d28jninlsf4ot" path="res://scenes/ingame_ui.tscn" id="3_8mmoh"]
+[ext_resource type="PackedScene" uid="uid://lh8m4ss0mrvw" path="res://scenes/level_1_paper.tscn" id="4_4q88b"]
+[ext_resource type="PackedScene" uid="uid://bhlyxse2u0tep" path="res://scenes/interactable.tscn" id="5_usbgp"]
+[ext_resource type="Texture2D" uid="uid://d2r34smo1ry1i" path="res://sample_assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png" id="6_b6d4y"]
+[ext_resource type="Texture2D" uid="uid://lvxi3v4vgpwq" path="res://assets/Level1/GDLevel1.png" id="7_1i0x0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yi3cr"]
-texture = ExtResource("1_vhuyh")
+texture = ExtResource("6_b6d4y")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -393,7 +393,7 @@ texture = ExtResource("1_vhuyh")
 3:15/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v53s8"]
-texture = ExtResource("2_j7moe")
+texture = ExtResource("7_1i0x0")
 0:0/0 = 0
 0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 0:0/0/physics_layer_0/angular_velocity = 0.0
@@ -1050,9 +1050,9 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="Level1" type="Node2D"]
-script = ExtResource("1_j0lfo")
+script = ExtResource("1_75h12")
 
-[node name="Player" parent="." instance=ExtResource("2_7xpuj")]
+[node name="Player" parent="." instance=ExtResource("2_n0paf")]
 position = Vector2(317, 360)
 collision_layer = 10
 collision_mask = 9
@@ -1061,50 +1061,51 @@ collision_mask = 9
 position = Vector2(0, 5)
 zoom = Vector2(4, 4)
 
-[node name="UI" parent="." instance=ExtResource("4_3w26x")]
-quests = PackedStringArray("Collect the broken pieces of the wedding photo before they fade away", "Use the code", "Next", "Next", "Next", "Next")
+[node name="UI" parent="." instance=ExtResource("3_8mmoh")]
 
 [node name="pieces" type="Node" parent="."]
 
-[node name="level1_paper7" parent="pieces" instance=ExtResource("3_kbkyt")]
+[node name="level1_paper7" parent="pieces" instance=ExtResource("4_4q88b")]
 position = Vector2(609, 277)
 
-[node name="level1_paper6" parent="pieces" instance=ExtResource("3_kbkyt")]
+[node name="level1_paper6" parent="pieces" instance=ExtResource("4_4q88b")]
 position = Vector2(188, 119)
 
-[node name="level1_paper5" parent="pieces" instance=ExtResource("3_kbkyt")]
+[node name="level1_paper5" parent="pieces" instance=ExtResource("4_4q88b")]
 position = Vector2(446, 4)
 
-[node name="level1_paper" parent="pieces" instance=ExtResource("3_kbkyt")]
+[node name="level1_paper" parent="pieces" instance=ExtResource("4_4q88b")]
 position = Vector2(231, 381)
 
-[node name="level1_paper2" parent="pieces" instance=ExtResource("3_kbkyt")]
+[node name="level1_paper2" parent="pieces" instance=ExtResource("4_4q88b")]
 position = Vector2(883, 358)
 
-[node name="level1_paper3" parent="pieces" instance=ExtResource("3_kbkyt")]
+[node name="level1_paper3" parent="pieces" instance=ExtResource("4_4q88b")]
 position = Vector2(884, 184)
 
-[node name="level1_paper4" parent="pieces" instance=ExtResource("3_kbkyt")]
+[node name="level1_paper4" parent="pieces" instance=ExtResource("4_4q88b")]
 position = Vector2(604, 470)
 
-[node name="level1_paper8" parent="pieces" instance=ExtResource("3_kbkyt")]
+[node name="level1_paper8" parent="pieces" instance=ExtResource("4_4q88b")]
 position = Vector2(186, 232)
 
-[node name="level1_paper9" parent="pieces" instance=ExtResource("3_kbkyt")]
+[node name="level1_paper9" parent="pieces" instance=ExtResource("4_4q88b")]
 position = Vector2(565, 340)
 
 [node name="Interactables" type="Node2D" parent="."]
 z_index = 2
 
-[node name="Wedding Photo" parent="Interactables" instance=ExtResource("5_7eifu")]
+[node name="Wedding Photo" parent="Interactables" instance=ExtResource("5_usbgp")]
 visible = false
 position = Vector2(663, 326)
 scale = Vector2(4.95846, 2.85714)
 interact_label = "Wedding Photo"
-interact_type = "show_note"
-interact_value = "This is our wedding photo."
+interact_type = "interactable"
+interact_value = "Our wedding day... We looked so happy."
+interact_value2 = " I thought we had forever. This can't be real... it must be a bad dream. "
+interact_value3 = "Any moment now, I’ll wake up and you’ll be here."
 
-[node name="Bathroom Door" parent="Interactables" instance=ExtResource("5_7eifu")]
+[node name="Bathroom Door" parent="Interactables" instance=ExtResource("5_usbgp")]
 visible = false
 position = Vector2(589, 34)
 scale = Vector2(2.47818, 4.37482)
@@ -1112,7 +1113,7 @@ interact_label = "Bathroom Door"
 interact_type = "next_level"
 interact_value = "Do you wanna go inside?"
 
-[node name="Interactable2" parent="Interactables" instance=ExtResource("5_7eifu")]
+[node name="Interactable2" parent="Interactables" instance=ExtResource("5_usbgp")]
 position = Vector2(199, 39)
 rotation = -0.945977
 interact_label = "Old Journal"
@@ -1121,7 +1122,7 @@ interact_value = "Our journal... "
 interact_value2 = "We used to write in this together, dreaming about our future. Reading these entries now, it feels like they belong to someone else."
 interact_value3 = "Those dreams died with you. But maybe if I keep writing, you’ll come back and we can finish it together."
 
-[node name="Interactable3" parent="Interactables" instance=ExtResource("5_7eifu")]
+[node name="Interactable3" parent="Interactables" instance=ExtResource("5_usbgp")]
 position = Vector2(372, 234)
 interact_label = "Remote Control"
 interact_type = "show_note"
@@ -1129,7 +1130,7 @@ interact_value = "We used to watch our favorite shows together...curled up on th
 interact_value2 = "Now, the silence is deafening."
 interact_value3 = "But if I wait long enough, maybe you’ll sit beside me again and we can watch something together."
 
-[node name="Interactable" parent="Interactables" instance=ExtResource("5_7eifu")]
+[node name="Interactable" parent="Interactables" instance=ExtResource("5_usbgp")]
 position = Vector2(833, 240)
 interact_label = "Wedding Album"
 interact_type = "show_note"
@@ -1147,7 +1148,7 @@ layer_0/tile_data = PackedInt32Array(-1179648, 917505, 15, -1114112, 917505, 15,
 layer_1/name = "Extra0.5"
 layer_1/tile_data = PackedInt32Array(-131058, 327681, 4, -65522, 327681, 5, -131057, 393217, 4, -65521, 393217, 5, -131056, 458753, 4, -65520, 458753, 5, -131065, 327681, 6, -65529, 327681, 7, -131064, 393217, 6, -65528, 393217, 7, -786432, 786433, 0, -720896, 786433, 1, -786431, 851969, 0, -720895, 851969, 1, -786430, 917505, 0, -720894, 917505, 1, -131068, 786433, 0, -65532, 786433, 1, -131067, 851969, 0, -65531, 851969, 1, -131066, 917505, 0, -65530, 917505, 1)
 layer_2/name = "Backwall"
-layer_2/tile_data = PackedInt32Array(-655359, 1048577, 10, -655358, 1048577, 10, -655357, 1048577, 10, -655356, 1048577, 10, -655355, 1048577, 10, -655354, 1048577, 10, -655353, 1048577, 10, -655352, 1048577, 10, -720895, 1048577, 9, -720894, 1048577, 9, -720893, 1048577, 9, -720892, 1048577, 9, -720891, 1048577, 9, -720890, 1048577, 9, -720889, 1048577, 9, -720888, 1048577, 9, -720887, 983041, 268435465, -655351, 983041, 268435466, -1114107, 1048577, 10, -1114106, 1048577, 10, -1114105, 1048577, 10, -1114104, 1048577, 10, -1179647, 1048577, 9, -1179646, 1048577, 9, -1179645, 1048577, 9, -1179644, 1048577, 9, -1179643, 1048577, 9, -1179642, 1048577, 9, -1179641, 1048577, 9, -1179640, 1048577, 9, -1179639, 1048577, 9, -1114103, 1048577, 10, -1179648, 983041, 9, -1114112, 983041, 10, -1048576, 851969, 8, -983040, 851969, 8, -917504, 851969, 8, -851968, 851969, 8, -786432, 851969, 8, -720896, 983041, 9, -655360, 983041, 10, -589824, 851969, 8, -524288, 851969, 8, -458752, 851969, 8, -393216, 851969, 8, -327680, 851969, 8, -262144, 851969, 8, -196608, 851969, 8, -131072, 851969, 8, -65536, 851969, 9, -1179638, 1048577, 9, -1114102, 1048577, 10, -1179637, 1048577, 9, -1114101, 1048577, 10, -1179636, 1048577, 9, -1114100, 1048577, 10, -851946, 851969, 268435465, -786410, 851969, 268435466, -720874, 851969, 268435464, -655338, 851969, 268435464, -589802, 851969, 268435464, -524266, 851969, 268435464, -458730, 983041, 268435465, -393194, 983041, 268435466, -327658, 851969, 268435464, -262122, 851969, 268435464, -196586, 851969, 268435464, -131050, 851969, 268435464, -65514, 851969, 268435465, -851947, 1048577, 9, -786411, 1048577, 10, -851948, 1048577, 9, -786412, 1048577, 10, -851949, 1048577, 9, -786413, 1048577, 10, -851950, 1048577, 9, -786414, 1048577, 10, -851951, 1048577, 9, -786415, 1048577, 10, -851952, 1048577, 9, -786416, 1048577, 10, -851953, 1048577, 9, -786417, 1048577, 10, -851954, 1048577, 9, -786418, 1048577, 10, -917491, 1048577, 15, -851955, 983041, 9, -786419, 983041, 10, -1048563, 1048577, 13, -720883, 983041, 11, -458738, 1048577, 9, -393202, 1048577, 10, -458737, 1048577, 9, -393201, 1048577, 10, -458736, 1048577, 9, -393200, 1048577, 10, -458735, 1048577, 9, -393199, 1048577, 10, -458734, 1048577, 9, -393198, 1048577, 10, -458733, 1048577, 9, -393197, 1048577, 10, -458732, 1048577, 9, -393196, 1048577, 10, -458731, 1048577, 9, -393195, 1048577, 10, -524275, 851969, 8, -458739, 851969, 9, -393203, 851969, 10, -589811, 851969, 7, -65535, 1048577, 9, 1, 1048577, 10, -65534, 1048577, 9, 2, 1048577, 10, -65533, 1048577, 9, 3, 1048577, 10, -65532, 1048577, 9, 4, 1048577, 10, -65531, 1048577, 9, 5, 1048577, 10, -65530, 1048577, 9, 6, 1048577, 10, -65529, 1048577, 9, 7, 1048577, 10, -65528, 1048577, 9, 8, 1048577, 10, -65527, 1048577, 9, 9, 1048577, 10, -65526, 1048577, 9, 10, 1048577, 10, -65525, 1048577, 9, 11, 1048577, 10, -65524, 1048577, 9, 12, 1048577, 10, -65523, 1048577, 9, 13, 1048577, 10, -65522, 1048577, 9, 14, 1048577, 10, -65521, 1048577, 9, 15, 1048577, 10, -65520, 1048577, 9, 16, 1048577, 10, -65519, 1048577, 9, 17, 1048577, 10, -65518, 1048577, 9, 18, 1048577, 10, -65517, 1048577, 9, 19, 1048577, 10, -65516, 1048577, 9, 20, 1048577, 10, -65515, 1048577, 9, 21, 1048577, 10, 0, 851969, 10, 22, 851969, 268435466, -983027, 1048577, 14, -1179635, 1048577, 11, -1114099, 1048577, 12, -1048564, 983041, 13, -1114111, 1048577, 10, -1114110, 1048577, 10, -1114109, 1048577, 10, -1114108, 1048577, 10)
+layer_2/tile_data = PackedInt32Array(-655359, 1048577, 10, -655358, 1048577, 10, -655357, 1048577, 10, -655356, 1048577, 10, -655355, 1048577, 10, -655354, 1048577, 10, -655353, 1048577, 10, -655352, 1048577, 10, -720895, 1048577, 9, -720894, 1048577, 9, -720893, 1048577, 9, -720892, 1048577, 9, -720891, 1048577, 9, -720890, 1048577, 9, -720889, 1048577, 9, -720888, 1048577, 9, -720887, 983041, 268435465, -655351, 983041, 268435466, -1114107, 1048577, 10, -1114106, 1048577, 10, -1114105, 1048577, 10, -1114104, 1048577, 10, -1179647, 1048577, 9, -1179646, 1048577, 9, -1179645, 1048577, 9, -1179644, 1048577, 9, -1179643, 1048577, 9, -1179642, 1048577, 9, -1179641, 1048577, 9, -1179640, 1048577, 9, -1179639, 1048577, 9, -1114103, 1048577, 10, -1179648, 983041, 9, -1114112, 983041, 10, -1048576, 851969, 8, -983040, 851969, 8, -917504, 851969, 8, -851968, 851969, 8, -786432, 851969, 8, -720896, 983041, 9, -655360, 983041, 10, -589824, 851969, 8, -524288, 851969, 8, -458752, 851969, 8, -393216, 851969, 8, -327680, 851969, 8, -262144, 851969, 8, -196608, 851969, 8, -131072, 851969, 8, -65536, 851969, 9, -1179638, 1048577, 9, -1114102, 1048577, 10, -1179637, 1048577, 9, -1114101, 1048577, 10, -1179636, 1048577, 9, -1114100, 1048577, 10, -851946, 851969, 268435465, -786410, 851969, 268435466, -720874, 851969, 268435464, -655338, 851969, 268435464, -589802, 851969, 268435464, -524266, 851969, 268435464, -458730, 983041, 268435465, -393194, 983041, 268435466, -327658, 851969, 268435464, -262122, 851969, 268435464, -196586, 851969, 268435464, -131050, 851969, 268435464, -65514, 851969, 268435465, -851947, 1048577, 9, -786411, 1048577, 10, -851948, 1048577, 9, -786412, 1048577, 10, -851949, 1048577, 9, -786413, 1048577, 10, -851950, 1048577, 9, -786414, 1048577, 10, -851951, 1048577, 9, -786415, 1048577, 10, -851952, 1048577, 9, -786416, 1048577, 10, -851953, 1048577, 9, -786417, 1048577, 10, -851954, 1048577, 9, -786418, 1048577, 10, -851955, 983041, 9, -786419, 983041, 10, -1048563, 1048577, 13, -720883, 983041, 11, -458738, 1048577, 9, -393202, 1048577, 10, -458737, 1048577, 9, -393201, 1048577, 10, -458736, 1048577, 9, -393200, 1048577, 10, -458735, 1048577, 9, -393199, 1048577, 10, -458734, 1048577, 9, -393198, 1048577, 10, -458733, 1048577, 9, -393197, 1048577, 10, -458732, 1048577, 9, -393196, 1048577, 10, -458731, 1048577, 9, -393195, 1048577, 10, -524275, 851969, 8, -458739, 851969, 9, -393203, 851969, 10, -589811, 851969, 7, -65535, 1048577, 9, 1, 1048577, 10, -65534, 1048577, 9, 2, 1048577, 10, -65533, 1048577, 9, 3, 1048577, 10, -65532, 1048577, 9, 4, 1048577, 10, -65531, 1048577, 9, 5, 1048577, 10, -65530, 1048577, 9, 6, 1048577, 10, -65529, 1048577, 9, 7, 1048577, 10, -65528, 1048577, 9, 8, 1048577, 10, -65527, 1048577, 9, 9, 1048577, 10, -65526, 1048577, 9, 10, 1048577, 10, -65525, 1048577, 9, 11, 1048577, 10, -65524, 1048577, 9, 12, 1048577, 10, -65523, 1048577, 9, 13, 1048577, 10, -65522, 1048577, 9, 14, 1048577, 10, -65521, 1048577, 9, 15, 1048577, 10, -65520, 1048577, 9, 16, 1048577, 10, -65519, 1048577, 9, 17, 1048577, 10, -65518, 1048577, 9, 18, 1048577, 10, -65517, 1048577, 9, 19, 1048577, 10, -65516, 1048577, 9, 20, 1048577, 10, -65515, 1048577, 9, 21, 1048577, 10, 0, 851969, 10, 22, 851969, 268435466, -983027, 1048577, 14, -1179635, 1048577, 11, -1114099, 1048577, 12, -1114111, 1048577, 10, -1114110, 1048577, 10, -1114109, 1048577, 10, -1114108, 1048577, 10, -1048564, 983041, 13, -917491, 1048577, 12)
 layer_3/name = "TopGround"
 layer_3/tile_data = PackedInt32Array(-589822, 131073, 5, -589821, 196609, 5, -655356, 1, 4, -589820, 1, 5, -589819, 65537, 5, -589818, 131073, 5, -655355, 65537, 4, -589817, 196609, 5, -262142, 327681, 15, -262141, 393217, 15, -262140, 327681, 15, -262139, 393217, 15, -262138, 327681, 15, -262137, 393217, 15, -327679, 327681, 13, -393215, 327681, 12, -524286, 1, 11, -458750, 1, 12, -393214, 1, 13, -327678, 1, 14, -524285, 65537, 11, -458749, 65537, 12, -393213, 65537, 13, -327677, 65537, 14, -524284, 131073, 11, -458748, 131073, 12, -393212, 131073, 13, -327676, 131073, 14, -524283, 196609, 11, -458747, 196609, 12, -393211, 196609, 13, -327675, 196609, 14, -524282, 196609, 11, -458746, 196609, 12, -393210, 196609, 13, -327674, 196609, 14, -524281, 262145, 11, -458745, 262145, 12, -393209, 262145, 13, -327673, 262145, 14, -65514, 851969, 268435464, -1114112, 1, 0, -1048576, 1, 1, -983040, 1, 2, -917504, 1, 3, -1114111, 65537, 0, -1048575, 65537, 1, -983039, 65537, 2, -917503, 65537, 3, -1114110, 131073, 0, -1048574, 131073, 1, -1114109, 196609, 0, -1048573, 196609, 1, -1114108, 262145, 0, -1048572, 262145, 1, -1114107, 327681, 0, -1048571, 327681, 1, -1114106, 393217, 0, -1048570, 393217, 1, -1114105, 458753, 0, -1048569, 458753, 1, -917502, 131073, 2, -917501, 196609, 2, -917500, 262145, 2, -851966, 131073, 3, -851965, 196609, 3, -851964, 262145, 3, -917497, 327681, 2, -851961, 327681, 3, -917499, 196609, 2, -851963, 196609, 3, -917498, 262145, 2, -851962, 262145, 3)
 layer_4/name = "Extra"

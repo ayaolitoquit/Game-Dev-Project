@@ -28,6 +28,7 @@ directories/dch_directory={
 }
 directories/dtl_directory={
 "alert": "res://dialogic/alert.dtl",
+"interactable_item": "res://interactable_item.dtl",
 "item_interact": "res://dialogic/item_interact.dtl",
 "level1cutscene1": "res://assets/fonts/Silkscreen/level1cutscene1.dtl",
 "level2cutscene": "res://assets/cutscenes/level1/level2cutscene.dtl",

@@ -15,25 +15,25 @@ func _ready():
 	
 
 func disconnect_signals():
-	if  Game.is_connected("wedding_photo_interacted", wedphoto_interacted):
-		Game.disconnect("wedding_photo_interacted",wedphoto_interacted)
-	if  Game.is_connected("respawn_paper",papers_respawn):
-		Game.disconnect("respawn_paper",papers_respawn)
-	if  Game.is_connected("disappear_papers", paper_disappear):
-		Game.disconnect("disappear_papers", paper_disappear)
+	if  Game.is_connected("wedding_photo_interacted", on_wedding_photo_interacted):
+		Game.disconnect("wedding_photo_interacted",on_wedding_photo_interacted)
+	if  Game.is_connected("respawn_paper",on_respawn_paper):
+		Game.disconnect("respawn_paper",on_respawn_paper)
+	if  Game.is_connected("disappear_papers", on_disappear_papers):
+		Game.disconnect("disappear_papers", on_disappear_papers)
 
 func initialize():
-	if not Game.is_connected("wedding_photo_interacted", wedphoto_interacted):
-		Game.connect("wedding_photo_interacted",wedphoto_interacted)
-	if not Game.is_connected("respawn_paper",papers_respawn):
-		Game.connect("respawn_paper",papers_respawn)
-	if not Game.is_connected("disappear_papers", paper_disappear):
-		Game.connect("disappear_papers", paper_disappear)
+	if not Game.is_connected("wedding_photo_interacted", on_wedding_photo_interacted):
+		Game.connect("wedding_photo_interacted",on_wedding_photo_interacted)
+	if not Game.is_connected("respawn_paper",on_respawn_paper):
+		Game.connect("respawn_paper",on_respawn_paper)
+	if not Game.is_connected("disappear_papers", on_disappear_papers):
+		Game.connect("disappear_papers", on_disappear_papers)
 	
 	set_process(true)
 
 
-func paper_disappear():
+func on_disappear_papers():
 	disappearing = true
 	disappear_timer = disappear_duration
 
@@ -48,15 +48,16 @@ func _on_body_exited(body):
 		body_detected = false
 		#shader_material.shader = null
 
-func wedphoto_interacted():
+func on_wedding_photo_interacted(_string):
 	is_wedphoto_interacted = true
 	$".".visible = true
 
-func papers_respawn(_something: Array):
+func on_respawn_paper(_something: Array):
 	disappearing = false  # Reset disappearing flag
 	disappear_timer = 0.0  # Reset disappearance timer
 	modulate.a = 1.0  # Reset alpha to 1.0 # Reset alpha to 1.0
-	#queue_free()
+	print("disappearing" + str(disappearing))
+	print("timer: " + str(disappear_timer) + "  modulate: " + str(modulate.a))
 
 func _process(_delta):
 	if is_wedphoto_interacted:

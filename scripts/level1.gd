@@ -6,7 +6,7 @@ const LEVEL_1_PAPER = preload("res://scenes/level_1_paper.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Dialogic.start("level1cutscene1")
+	#Dialogic.start("level1cutscene1")
 	Game.connect("respawn_paper", respawn_papers)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	AudioManager.bgm.play()

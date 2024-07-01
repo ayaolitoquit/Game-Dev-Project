@@ -13,6 +13,10 @@ var move_speed : float = 100.0
 var paper_complete := false
 var paperScene = preload("res://scenes/level_1_paper.tscn")
 var input = Vector2.ZERO
+var samplestring = ""
+@onready var player = $"."
+
+
 
 func _ready():
 	update_interactions()
@@ -77,17 +81,17 @@ func execute_interaction():
 		match cur_interaction.interact_type:
 			"show_note": 
 				Game.items_interacted.emit(str(cur_interaction.interact_value), str(cur_interaction.interact_value2), str(cur_interaction.interact_value3))
-				if interact_label.text == str("Wedding Photo"):
-					level1timer.start()
-					Game.disappear_papers.emit()
-					Game.wedding_photo_interacted.emit()
+				if interact_label.text == str("Mirror"):
+					#Dialogic.start("interactable_item")
+					#await get_tree().create_timer(30.0).timeout
+					#player.global_position = Vector2(1441,103)
+					pass
 			"show_description": pass
 			"interactable": 
-				###DONT KNOW WHATS THIS
-				if paper_complete:
-					print("paper completed - show code")
-				else:
-					print("di pa tapos!")
+				if interact_label.text == str("Wedding Photo"):
+					level1timer.start()
+					Game.wedding_photo_interacted.emit(str(cur_interaction.interact_value))
+					Game.disappear_papers.emit()
 			"next_level":
 				Game.progress_next_level.emit()
 
@@ -100,21 +104,21 @@ var initial_item_states = []
 
 func store_initial_item_states():
 	## Store the initial state and position of each item
-	for item in papers.get_children():
-		initial_item_states.append({
-			"scene": paperScene,
-			"position": item.global_position
-		})
+	if Game.current_level == 1:
+		for item in papers.get_children():
+			initial_item_states.append({
+				"scene": paperScene,
+				"position": item.global_position
+			})
 
 func _on_timer_timeout():
-	print("timeout!")
 	if paper_complete == false:
+		print("timeout!")
 		Game.paper_collected = 0
 		await get_tree().create_timer(3.0).timeout
 		Game.level1paper_reset.emit()
-		#respawn_papers()
 		Game.respawn_paper.emit(initial_item_states)
-		Game.wedding_photo_interacted.emit()
+		Game.wedding_photo_interacted.emit(samplestring)
 		level1timer.start()
 		
 

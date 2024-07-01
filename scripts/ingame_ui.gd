@@ -5,7 +5,6 @@ extends Control
 @onready var counter = $CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Counter
 @onready var mission_1 = $CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Mission1
 
-
 static var paper_collected := 0
 static var paper_complete := false
 var is_wedphoto_interacted = false
@@ -19,6 +18,10 @@ func _ready():
 	Game.connect("progress_next_level", on_progress_next_level)
 	
 	mission_1.text = quests[quest_counter]
+	print(Game.current_level)
+	
+	if Game.current_level != 1:
+		mission_1.visible = true 
 
 func _process(_delta):
 	if is_wedphoto_interacted:
@@ -32,16 +35,17 @@ func on_paper_is_collected():
 	paper_collected += 1
 	counter.text = str(paper_collected) + "/9"
 
-func on_wedding_photo_interacted():
+func on_wedding_photo_interacted(label):
+	Dialogic.VAR.itemlabel = label
+	Dialogic.start("interactable_item")
 	is_wedphoto_interacted = true
 	counter.visible = true
 
-
 func on_items_interacted(label1, label2, label3):
-	Dialogic.start("item_interact")
 	Dialogic.VAR.itemlabel = label1
 	Dialogic.VAR.itemlabel2 = label2
 	Dialogic.VAR.itemlabel3= label3
+	Dialogic.start("item_interact")
 
 func on_level1paper_reset():
 	paper_collected = 0
