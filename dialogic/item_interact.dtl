@@ -1,5 +1,5 @@
 [signal arg="dialogue_started"]
-if :
+if {itemlabel} != "null":
 	{itemlabel}
 	if {itemlabel2} != "null":
 		jump label2

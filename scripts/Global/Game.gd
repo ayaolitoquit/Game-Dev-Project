@@ -14,3 +14,4 @@ signal disappear_papers
 signal progress_next_level
 signal broken_tile
 signal mission_counter 
+signal flashlight_acquired

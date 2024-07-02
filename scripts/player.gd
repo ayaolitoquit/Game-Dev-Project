@@ -105,6 +105,11 @@ func execute_interaction():
 					Dialogic.VAR.itemlabel = cur_interaction.interact_value
 					Dialogic.start("interactable_item")
 					pass
+				if interact_label.text == str("Flashlight"):
+					Game.emit_signal("flashlight_acquired")
+					Dialogic.VAR.itemlabel = cur_interaction.interact_value
+					Dialogic.start("interactable_item")
+					pass
 			"next_level":
 				if interact_label.text == str("Gate"):
 					print("is rings " + str(rings_acquired))
