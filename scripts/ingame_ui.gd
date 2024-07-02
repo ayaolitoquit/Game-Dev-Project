@@ -16,9 +16,10 @@ func _ready():
 	Game.connect("items_interacted", on_items_interacted)
 	Game.connect("level1paper_reset", on_level1paper_reset)
 	Game.connect("progress_next_level", on_progress_next_level)
+	Game.connect("mission_counter", on_mission_counter)
 	
 	mission_1.text = quests[quest_counter]
-	print(Game.current_level)
+	print("level: " + str(Game.current_level))
 	
 	if Game.current_level != 1:
 		mission_1.show() 
@@ -64,6 +65,8 @@ func paper_completed():
 	paper_collected = 0
 	Dialogic.start("next_level")
 	Dialogic.VAR.level = "level1"
-	
-	
+
+func on_mission_counter():
+	quest_counter += 1
+	mission_1.text = quests[quest_counter]
 

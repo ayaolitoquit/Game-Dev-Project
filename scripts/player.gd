@@ -6,17 +6,13 @@ class_name Player extends CharacterBody2D
 @onready var papers = $"../pieces"
 @onready var animations = $animations
 @onready var interact_tooltip = $InteractionComponents/Control/Interact_tooltip
-
-
+@onready var player = $"."
 
 var move_speed : float = 100.0
 var paper_complete := false
 var paperScene = preload("res://scenes/level_1_paper.tscn")
 var input = Vector2.ZERO
 var samplestring = ""
-@onready var player = $"."
-
-
 
 func _ready():
 	update_interactions()
@@ -24,10 +20,8 @@ func _ready():
 	if Game.current_level == 1:
 		Game.connect("paper_iscomplete", paper_completed) 
 		store_initial_item_states()
-	
-	
+
 func _process(_delta):
-	
 	var direction : Vector2 = Vector2.ZERO
 	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
@@ -79,17 +73,20 @@ func execute_interaction():
 		match cur_interaction.interact_type:
 			"show_note": 
 				Game.items_interacted.emit(str(cur_interaction.interact_value), str(cur_interaction.interact_value2), str(cur_interaction.interact_value3))
-				if interact_label.text == str("Mirror"):
-					#Dialogic.start("interactable_item")
-					#await get_tree().create_timer(30.0).timeout
-					#player.global_position = Vector2(1441,103)
-					pass
+				
 			"show_description": pass
 			"interactable": 
 				if interact_label.text == str("Wedding Photo"):
 					level1timer.start()
 					Game.wedding_photo_interacted.emit(str(cur_interaction.interact_value))
 					Game.disappear_papers.emit()
+				if interact_label.text == str("Mirror"):
+					Dialogic.VAR.itemlabel = cur_interaction.interact_value
+					Dialogic.start("interactable_item")
+					Dialogic.VAR.item = cur_interaction.interact_label
+					Dialogic.VAR.level = "level2"
+					
+					pass
 			"next_level":
 				Game.progress_next_level.emit()
 

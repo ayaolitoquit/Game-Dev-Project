@@ -6,7 +6,6 @@ const LEVEL_1_PAPER = preload("res://scenes/level_1_paper.tscn")
 
 
 func _ready():
-	#_unpaused()
 	pause.hide_pause()
 	#Dialogic.start("level1cutscene1")
 	Game.connect("respawn_paper", respawn_papers)

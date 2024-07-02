@@ -1,14 +1,11 @@
-if {itemlabel} != null:
+[signal arg="dialogue_started"]
+if :
 	{itemlabel}
-	if {itemlabel2} != null:
+	if {itemlabel2} != "null":
 		jump label2
-	else:
-		[end_timeline]
+[signal arg="dialogue_finished"]
+[end_timeline]
 label label2
 {itemlabel2}
-if {itemlabel3} != null:
-	jump label3
-label label3
-{itemlabel3}
-[signal arg="teleport"]
-[end_timeline]
+if {itemlabel3} != "null":
+	{itemlabel3}

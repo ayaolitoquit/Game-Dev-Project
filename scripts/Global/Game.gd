@@ -12,3 +12,5 @@ signal level1paper_reset
 signal respawn_paper(initial_item_states: Array)
 signal disappear_papers
 signal progress_next_level
+signal broken_tile
+signal mission_counter 

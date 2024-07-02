@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://hc43hqv0sqno"]
+[gd_scene load_steps=8 format=3 uid="uid://hc43hqv0sqno"]
 
 [ext_resource type="Texture2D" uid="uid://d3hp4awa87s8v" path="res://assets/Level3/GDlevel3.png" id="1_4q5h6"]
+[ext_resource type="Script" path="res://scripts/level_3.gd" id="1_jt5ph"]
 [ext_resource type="PackedScene" uid="uid://d2ykemmyhdq57" path="res://scenes/player.tscn" id="1_sd55k"]
 [ext_resource type="PackedScene" uid="uid://d28jninlsf4ot" path="res://scenes/ingame_ui.tscn" id="2_0wavi"]
 [ext_resource type="PackedScene" uid="uid://bhlyxse2u0tep" path="res://scenes/interactable.tscn" id="3_3q57x"]
@@ -1072,6 +1073,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_cii1s")
 
 [node name="level3" type="Node2D"]
+script = ExtResource("1_jt5ph")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_xblxd")
@@ -1097,3 +1099,9 @@ offset_bottom = 411.0
 
 [node name="Interactable" parent="." instance=ExtResource("3_3q57x")]
 position = Vector2(636, 373)
+
+[node name="pieces" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

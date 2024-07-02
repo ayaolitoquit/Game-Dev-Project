@@ -36,6 +36,7 @@ directories/dtl_directory={
 "progress_next_level": "res://assets/fonts/Silkscreen/progress_next_level.dtl"
 }
 variables={
+"item": "",
 "itemlabel": "",
 "itemlabel2": "",
 "itemlabel3": "",

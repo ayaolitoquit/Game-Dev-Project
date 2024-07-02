@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://blcg6xjxdljfb"]
+[gd_scene load_steps=21 format=3 uid="uid://blcg6xjxdljfb"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_pht01"]
 [ext_resource type="Texture2D" uid="uid://nrtpr2r3ylm4" path="res://assets/Menu/Game.png" id="2_38b3j"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bd8470bf4ar5i" path="res://assets/Menu/hover buttons/Hover Skip.png" id="16_qdngo"]
 [ext_resource type="Texture2D" uid="uid://djvtvin1tnml4" path="res://assets/Menu/Next button.png" id="17_2a2xp"]
 [ext_resource type="Texture2D" uid="uid://bahd3uujnu1j3" path="res://assets/Menu/hover buttons/Hover Next.png" id="18_a3g3g"]
+[ext_resource type="Texture2D" uid="uid://d3w623wlf0gac" path="res://assets/Menu/Credits Page.png" id="20_o5l1o"]
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -158,7 +159,7 @@ theme_override_constants/separation = 490
 layout_mode = 2
 theme_override_constants/separation = 404
 
-[node name="Back button" type="TextureButton" parent="Tutorial Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+[node name="Tutorial Back button" type="TextureButton" parent="Tutorial Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 texture_normal = ExtResource("14_0pjkn")
@@ -186,7 +187,46 @@ texture_normal = ExtResource("17_2a2xp")
 texture_pressed = ExtResource("18_a3g3g")
 texture_hover = ExtResource("18_a3g3g")
 
+[node name="CreditsPanel" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="CreditsPanel"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("20_o5l1o")
+
+[node name="Panel" type="Panel" parent="CreditsPanel"]
+self_modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CreditsPanel/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsPanel/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="CreditsPanel/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("14_0pjkn")
+texture_pressed = ExtResource("15_dobgr")
+texture_hover = ExtResource("15_dobgr")
+
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Credits" to="." method="_on_credits_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
-[connection signal="pressed" from="Tutorial Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer/Back button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Tutorial Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer/Tutorial Back button" to="." method="_on_tutorial_back_button_pressed"]
+[connection signal="pressed" from="CreditsPanel/Panel/MarginContainer/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
