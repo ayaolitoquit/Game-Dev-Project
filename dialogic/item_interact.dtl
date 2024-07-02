@@ -3,9 +3,9 @@ if :
 	{itemlabel}
 	if {itemlabel2} != "null":
 		jump label2
-[signal arg="dialogue_finished"]
-[end_timeline]
 label label2
 {itemlabel2}
 if {itemlabel3} != "null":
 	{itemlabel3}
+[signal arg="dialogue_finished"]
+[end_timeline]

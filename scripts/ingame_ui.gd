@@ -15,14 +15,12 @@ func _ready():
 	Game.connect("wedding_photo_interacted", on_wedding_photo_interacted)
 	Game.connect("items_interacted", on_items_interacted)
 	Game.connect("level1paper_reset", on_level1paper_reset)
-	Game.connect("progress_next_level", on_progress_next_level)
 	Game.connect("mission_counter", on_mission_counter)
 	
 	mission_1.text = quests[quest_counter]
 	print("level: " + str(Game.current_level))
 	
-	if Game.current_level != 1:
-		mission_1.show() 
+	
 
 func _process(_delta):
 	if is_wedphoto_interacted:
@@ -31,6 +29,10 @@ func _process(_delta):
 	#collect broken pieces
 	if paper_collected == 9:
 		paper_completed()
+	
+	if Game.current_level != 1:
+		mission_1.show() 
+		
 
 func on_paper_is_collected():
 	paper_collected += 1
@@ -54,8 +56,8 @@ func on_level1paper_reset():
 	Dialogic.start("alert")
 	Dialogic.VAR.level = "level1"
 
-func on_progress_next_level():
-	Dialogic.start("progress_next_level")
+#func on_progress_next_level():
+	#Dialogic.start("progress_next_level")
 
 func paper_completed():
 	Game.emit_signal("paper_iscomplete")

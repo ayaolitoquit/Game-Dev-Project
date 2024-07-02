@@ -11,6 +11,7 @@ func _ready():
 	Game.connect("respawn_paper", respawn_papers)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	AudioManager.bgm.play()
+	Dialogic.VAR.level = "level1"
 
 func _input(event):
 	if Input.is_action_just_pressed("pause"):
@@ -29,6 +30,10 @@ func _on_dialogic_signal(argument:String):
 		Game.current_level += 1
 		#AudioManager.bgm.stop() ################################# 
 		get_tree().change_scene_to_file("res://scenes/level_2.tscn")
+	if argument == "dialogue_started":
+		set_process_input(false)
+	if argument == "dialogue_finished":
+		set_process_input(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func respawn_papers(initial_item_states: Array):

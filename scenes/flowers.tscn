@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cpo0tm5534vr1"]
+
+[ext_resource type="Script" path="res://scripts/interactable.gd" id="1_dfg0y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o5pn0"]
+radius = 8.0
+
+[node name="flowers" type="Area2D"]
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+script = ExtResource("1_dfg0y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.47274, 1.66912)
+shape = SubResource("CircleShape2D_o5pn0")

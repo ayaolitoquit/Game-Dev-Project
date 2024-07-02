@@ -1,0 +1,4 @@
+[signal arg="dialogue_started"]
+[background arg="res://assets/Level3/Journal.png" fade="0.0"]
+[wait_input]
+[signal arg="dialogue_finished"]

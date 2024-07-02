@@ -142,3 +142,9 @@ offset_left = 289.0
 offset_top = 447.0
 offset_right = 289.0
 offset_bottom = 447.0
+
+[node name="pieces" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

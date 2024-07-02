@@ -4,10 +4,12 @@ var on_mirror_body_detected = false
 # Called when the node enters the scene tree for the first time.
 @onready var player = $Player
 @onready var pause = $pause
+
 func _ready():
 	Dialogic.signal_event.connect(on_dialogic_signal)
 	pause.hide_pause()
 	Game.current_level = 2
+	Dialogic.VAR.level = "level2"
 	
 func _input(event):
 	if Input.is_action_just_pressed("pause"):

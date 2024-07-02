@@ -1,0 +1,28 @@
+[signal arg="dialogue_started"]
+if {level} == "level1":
+	Do you want to enter?
+	- Yes
+		set {yesNo_choice} = true
+		[signal arg="d_next_level"]
+	- No
+		set {yesNo_choice} = false
+if {level} == "level2":
+	Do you want to exit?
+	- Yes
+		set {yesNo_choice} = true
+		[signal arg="d_next_level"]
+	- No
+		set {yesNo_choice} = false
+if {level} == "level3":
+	if {rings} == true:
+		Gate: Would you be willing to part with the wedding ring to secure your exit?
+		Our wedding ring... It's a symbol of our love and promises.
+		But if it's the only option for escape, maybe I should consider it.
+		- Yes
+			set {yesNo_choice} = true
+			[signal arg="d_next_level"]
+		- No
+			set {yesNo_choice} = false
+	else:
+		You haven't acquired the gift yet.
+[signal arg="dialogue_finished"]

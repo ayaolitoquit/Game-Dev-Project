@@ -24,29 +24,35 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Gate": "res://assets/cutscenes/level3/Gate.dch",
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
 "alert": "res://dialogic/alert.dtl",
-"interactable_item": "res://interactable_item.dtl",
+"compartment": "res://dialogic/compartment.dtl",
+"interactable_item": "res://dialogic/interactable_item.dtl",
 "item_interact": "res://dialogic/item_interact.dtl",
-"level1cutscene1": "res://assets/fonts/Silkscreen/level1cutscene1.dtl",
-"level2cutscene": "res://assets/cutscenes/level1/level2cutscene.dtl",
+"journal_hint": "res://dialogic/journal_hint.dtl",
+"level1cutscene1": "res://dialogic/level1cutscene1.dtl",
+"level2cutscene": "res://dialogic/level2cutscene.dtl",
+"level3cutscene": "res://dialogic/level3cutscene.dtl",
 "next_level": "res://dialogic/next_level.dtl",
-"progress_next_level": "res://assets/fonts/Silkscreen/progress_next_level.dtl"
+"progress_next_level": "res://dialogic/progress_next_level.dtl"
 }
 variables={
+"inputSecretWord": "",
 "item": "",
 "itemlabel": "",
 "itemlabel2": "",
 "itemlabel3": "",
 "level": "",
+"rings": false,
 "yesNo_choice": false
 }
 layout/style_list=[]
 layout/default_style=""
 glossary/default_case_sensitive=true
-text/letter_speed=0.01
+text/letter_speed=0.02
 text/initial_text_reveal_skippable=true
 text/text_reveal_skip_delay=0.1
 text/advance_delay=0.1
@@ -63,6 +69,9 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+text/autocolor_names=false
+text/autoadvance_fixed_delay=1.0
+text/autoadvance_enabled=false
 
 [display]
 

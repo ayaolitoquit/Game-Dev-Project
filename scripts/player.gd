@@ -13,6 +13,8 @@ var paper_complete := false
 var paperScene = preload("res://scenes/level_1_paper.tscn")
 var input = Vector2.ZERO
 var samplestring = ""
+var pause_interaction = false
+var rings_acquired = false
 
 func _ready():
 	update_interactions()
@@ -20,26 +22,40 @@ func _ready():
 	if Game.current_level == 1:
 		Game.connect("paper_iscomplete", paper_completed) 
 		store_initial_item_states()
+	Dialogic.signal_event.connect(_on_dialogic_signal)
+
+func _on_dialogic_signal(argument: String):
+	if argument == "dialogue_started":
+		pause_interaction = true
+		set_process_input(false)
+	if argument == "dialogue_finished":
+		set_process_input(true)
+		pause_interaction = false
+	if argument == "rings_acquired":
+		rings_acquired = true
+		Game.emit_signal("mission_counter")
 
 func _process(_delta):
-	var direction : Vector2 = Vector2.ZERO
-	direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
-	direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
-	update_animation()
+	if not pause_interaction:
+		var direction : Vector2 = Vector2.ZERO
+		direction.x = Input.get_action_strength("right") - Input.get_action_strength("left")
+		direction.y = Input.get_action_strength("down") - Input.get_action_strength("up")
+		update_animation()
+		
+		velocity = direction * move_speed
 	
-	velocity = direction * move_speed
-	
-	if Input.is_action_just_pressed("interact"):
-		execute_interaction()
+	if not pause_interaction:
+		if Input.is_action_just_pressed("interact"):
+			execute_interaction()
 
 func update_animation():
-	if Input.get_action_strength("left"):
+	if Input.get_action_strength("left") and not pause_interaction:
 		animations.play("run_left")
-	elif  Input.get_action_strength("right"):
+	elif  Input.get_action_strength("right") and not pause_interaction:
 		animations.play("run_right")
-	elif Input.get_action_strength("up"):
+	elif Input.get_action_strength("up") and not pause_interaction:
 		animations.play("run_up")
-	elif Input.get_action_strength("down"):
+	elif Input.get_action_strength("down") and not pause_interaction:
 		animations.play("run_down")
 	else:
 		animations.play("idle")
@@ -84,11 +100,24 @@ func execute_interaction():
 					Dialogic.VAR.itemlabel = cur_interaction.interact_value
 					Dialogic.start("interactable_item")
 					Dialogic.VAR.item = cur_interaction.interact_label
-					Dialogic.VAR.level = "level2"
-					
+					pass
+				if interact_label.text in ["Roses", "Lilies", "Tulips", "Daisies", "Dahlias","Irises", "Sunflowers"]:
+					Dialogic.VAR.itemlabel = cur_interaction.interact_value
+					Dialogic.start("interactable_item")
 					pass
 			"next_level":
-				Game.progress_next_level.emit()
+				if interact_label.text == str("Gate"):
+					print("is rings " + str(rings_acquired))
+					print(str(Dialogic.VAR.rings))
+					Dialogic.VAR.rings = rings_acquired
+					Dialogic.start("progress_next_level")
+				else:
+					Dialogic.start("progress_next_level")
+			"journal_hint":
+				Dialogic.start("journal_hint")
+				Game.emit_signal("mission_counter")
+			"compartment":
+				Dialogic.start("compartment")
 
 ##############################################################
 func paper_completed():

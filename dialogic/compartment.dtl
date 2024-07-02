@@ -1,0 +1,17 @@
+[signal arg="dialogue_started"]
+Seek the blooms of love so true,\
+Each one holds a hidden clue.
+Everlasting, trust, and grace,\
+Radiant in their pure embrace.
+Arrange their meanings from above,\
+To unlock the gift of _______ LOVE.
+What's the secret word?
+[text_input var="inputSecretWord"]
+if {inputSecretWord} == "ETERNAL":
+	You received the wedding rings.
+	[background arg="res://assets/cutscenes/level3/3 (1).PNG" fade="0.0"]
+	[signal arg="rings_acquired"]
+	[wait_input]
+else:
+	Wrong answer.
+[signal arg="dialogue_finished"]
