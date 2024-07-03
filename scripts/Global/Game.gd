@@ -15,3 +15,18 @@ signal progress_next_level
 signal broken_tile
 signal mission_counter 
 signal flashlight_acquired
+signal reset_level
+#func _get_state():
+	#var state = {
+		#"position": position,
+		#"velocity": velocity,
+		## Add other state variables as needed
+	#}
+	## Save the state to a file or a singleton
+	#Game._get_state(state)
+#
+#func _set_state(state):
+	#position = state["position"]
+	#velocity = state["velocity"]
+
+

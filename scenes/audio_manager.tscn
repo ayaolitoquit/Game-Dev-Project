@@ -1,14 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://dg318t7ddgisl"]
+[gd_scene load_steps=6 format=3 uid="uid://dg318t7ddgisl"]
 
 [ext_resource type="Script" path="res://scripts/audio_manager.gd" id="1_5t1bn"]
 [ext_resource type="AudioStream" uid="uid://cdntoadft5c3r" path="res://assets/audio/2020-08-17_-_Grief_And_Emptiness_-_www.FesliyanStudios.com_Steve_Oxen.mp3" id="2_p8st1"]
 [ext_resource type="AudioStream" uid="uid://bgij36mbhdohy" path="res://assets/audio/Main Menu - Lindsey Stirling - Carol Of The Bells.mp3" id="3_unqpf"]
+[ext_resource type="AudioStream" uid="uid://crltoobp0mgj1" path="res://assets/audio/paper-rustle-81855.mp3" id="4_ahuq8"]
+[ext_resource type="AudioStream" uid="uid://dntkqd6t1jwq5" path="res://assets/audio/Forgotten Memories.mp3" id="5_g6yj1"]
 
 [node name="AudioManager" type="Node2D"]
 script = ExtResource("1_5t1bn")
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_p8st1")
+volume_db = -5.0
 
 [node name="Menu_BGM" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_unqpf")
+
+[node name="paper sfx" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ahuq8")
+volume_db = -20.0
+
+[node name="sad bgm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_g6yj1")
+volume_db = -20.0

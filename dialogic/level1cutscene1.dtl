@@ -1,4 +1,4 @@
-[background arg="res://assets/cutscenes/level1/1.png" fade="0.0"]
+[background arg="1.png" fade="0.0"]
 [wait time="0.6"]
 [background arg="res://assets/cutscenes/level1/2.png" fade="0.0"]
 [wait time="0.7"]
@@ -32,3 +32,5 @@ Wait...what was that?
 Was it you? Are you... are you here?
 [wait time="1.0"]
 Please, don’t leave me. I need you. I can’t do this alone...
+[background fade="0.0"]
+DENIAL

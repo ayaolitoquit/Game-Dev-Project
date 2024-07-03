@@ -7,15 +7,24 @@ const LEVEL_1_PAPER = preload("res://scenes/level_1_paper.tscn")
 
 func _ready():
 	pause.hide_pause()
-	#Dialogic.start("level1cutscene1")
+	Dialogic.start("level1cutscene1")
 	Game.connect("respawn_paper", respawn_papers)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	AudioManager.bgm.play()
 	Dialogic.VAR.level = "level1"
+	set_process_input(true)
+	Input.MOUSE_MODE_HIDDEN
 
 func _input(event):
 	if Input.is_action_just_pressed("pause"):
 		swap_pause_state()
+		
+#maybe i can hide the mouse
+	if event is InputEventMouseMotion:
+		if event.velocity == Vector2(0,0):
+			Input.MOUSE_MODE_HIDDEN
+		else:
+			Input.MOUSE_MODE_VISIBLE
 
 func swap_pause_state():
 	if not pause.visible:
@@ -55,6 +64,4 @@ func respawn_papers(initial_item_states: Array):
 				print("Failed to instantiate the scene.")
 		else:
 			print("Invalid scene data.")
-
-
 

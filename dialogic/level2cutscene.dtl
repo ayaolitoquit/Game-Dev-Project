@@ -1,5 +1,9 @@
+[signal arg="dialogue_started"]
+if {item} == "Mirror":
+	Why did we have to fight that night? Why did I let you leave? I should have stopped you...
+	[signal arg="teleport"]
 [background arg="res://assets/cutscenes/level2/Blaming himself in the bathroom.jpg" fade="0.0"]
-It's all my fault. I said those awful things, and now you're gone. 
+It's all my fault. I said those awful things, and now you're gone.
 Damn it! Why did my anger ruin everything? I wish I could change it all.
 [wait time="1.0"]
 You...Why did you leave like that? Why did you have to die?!
@@ -7,5 +11,6 @@ I’m so angry at you for leaving me! For making me feel this way!
 [wait time="1.0"]
 Please, forgive me... I’m so sorry
 [background arg="res://assets/cutscenes/level2/Sucked in the Mirror.jpg" fade="0.0"]
-[wait time="1.0"]
-[signal arg="teleport"]
+[wait_input]
+[signal arg="dialogue_finished"]
+[end_timeline]

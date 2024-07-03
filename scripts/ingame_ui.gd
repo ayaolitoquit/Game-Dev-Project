@@ -2,8 +2,8 @@ extends Control
 
 @export var quests := PackedStringArray()
 
-@onready var counter = $CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Counter
-@onready var mission_1 = $CanvasLayer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Mission1
+@onready var counter = $CanvasLayer/MarginContainer/HBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Counter
+@onready var mission_1 = $CanvasLayer/MarginContainer/HBoxContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer/Mission1
 
 static var paper_collected := 0
 static var paper_complete := false
@@ -13,7 +13,7 @@ var quest_counter = 0
 func _ready():
 	Game.connect("paper_is_collected", on_paper_is_collected)
 	Game.connect("wedding_photo_interacted", on_wedding_photo_interacted)
-	Game.connect("items_interacted", on_items_interacted)
+	#Game.connect("items_interacted", on_items_interacted)
 	Game.connect("level1paper_reset", on_level1paper_reset)
 	Game.connect("mission_counter", on_mission_counter)
 	
@@ -44,11 +44,8 @@ func on_wedding_photo_interacted(label):
 	is_wedphoto_interacted = true
 	counter.show()
 
-func on_items_interacted(label1, label2, label3):
-	Dialogic.VAR.itemlabel = label1
-	Dialogic.VAR.itemlabel2 = label2
-	Dialogic.VAR.itemlabel3= label3
-	Dialogic.start("item_interact")
+#func on_items_interacted(label1, label2, label3):
+	#
 
 func on_level1paper_reset():
 	paper_collected = 0

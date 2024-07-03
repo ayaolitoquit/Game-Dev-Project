@@ -12,8 +12,8 @@ dest_files=["res://.godot/imported/2020-08-17_-_Grief_And_Emptiness_-_www.Fesliy
 
 [params]
 
-loop=false
-loop_offset=0
-bpm=0
+loop=true
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4

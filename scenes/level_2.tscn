@@ -1021,7 +1021,7 @@ offset_left = 221.0
 offset_top = 194.0
 offset_right = 221.0
 offset_bottom = 194.0
-quests = PackedStringArray("Go to the mirror", "Escape the Maze")
+quests = PackedStringArray("Go to the mirror", "Escape the Maze", "", "", "", "", "", "", "", "", "", "", "", "", "")
 
 [node name="Player" parent="." instance=ExtResource("2_nynd1")]
 process_mode = 1
@@ -1075,7 +1075,7 @@ process_mode = 1
 visible = false
 position = Vector2(517, 240)
 interact_label = "Mirror"
-interact_type = "interactable"
+interact_type = "mirror"
 interact_value = "Why did we have to fight that night? Why did I let you leave? I should have stopped you..."
 
 [node name="Bathroom Door" parent="." instance=ExtResource("3_ucfd5")]

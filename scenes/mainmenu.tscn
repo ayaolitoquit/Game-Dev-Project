@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://blcg6xjxdljfb"]
+[gd_scene load_steps=17 format=3 uid="uid://blcg6xjxdljfb"]
 
 [ext_resource type="Script" path="res://scripts/mainmenu.gd" id="1_pht01"]
 [ext_resource type="Texture2D" uid="uid://nrtpr2r3ylm4" path="res://assets/Menu/Game.png" id="2_38b3j"]
@@ -12,13 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://djuyy8quh0ygr" path="res://assets/Menu/Tutorial button.png" id="9_thmk4"]
 [ext_resource type="Texture2D" uid="uid://ca827cwshsnyg" path="res://assets/Menu/hover buttons/Hover Tutorial button.png" id="10_0ui7d"]
 [ext_resource type="Texture2D" uid="uid://bqdpg0mungq24" path="res://assets/Menu/hover buttons/Hover Exit.png" id="10_4wldc"]
-[ext_resource type="Texture2D" uid="uid://g8fqvp2hs8w5" path="res://assets/Menu/Animation - In Game.png" id="13_p31wq"]
+[ext_resource type="Texture2D" uid="uid://c51lvidyoplwq" path="res://assets/Menu/Tutorial Page (2).png" id="13_o5u2q"]
 [ext_resource type="Texture2D" uid="uid://7edilwyo25cc" path="res://assets/Menu/Back Button.png" id="14_0pjkn"]
 [ext_resource type="Texture2D" uid="uid://b5h5im05vvboh" path="res://assets/Menu/hover buttons/Hover Back button.png" id="15_dobgr"]
-[ext_resource type="Texture2D" uid="uid://wltubufv0e4g" path="res://assets/Menu/Skip button.png" id="15_oycv0"]
-[ext_resource type="Texture2D" uid="uid://bd8470bf4ar5i" path="res://assets/Menu/hover buttons/Hover Skip.png" id="16_qdngo"]
-[ext_resource type="Texture2D" uid="uid://djvtvin1tnml4" path="res://assets/Menu/Next button.png" id="17_2a2xp"]
-[ext_resource type="Texture2D" uid="uid://bahd3uujnu1j3" path="res://assets/Menu/hover buttons/Hover Next.png" id="18_a3g3g"]
 [ext_resource type="Texture2D" uid="uid://d3w623wlf0gac" path="res://assets/Menu/Credits Page.png" id="20_o5l1o"]
 
 [node name="Main_Menu" type="Control"]
@@ -129,7 +125,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("13_p31wq")
+texture = ExtResource("13_o5u2q")
+expand_mode = 1
 
 [node name="Panel" type="Panel" parent="Tutorial Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -165,27 +162,6 @@ size_flags_vertical = 4
 texture_normal = ExtResource("14_0pjkn")
 texture_pressed = ExtResource("15_dobgr")
 texture_hover = ExtResource("15_dobgr")
-
-[node name="TextureRect" type="TextureRect" parent="Tutorial Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 4
-texture = ExtResource("9_thmk4")
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Tutorial Panel/Panel/MarginContainer/VBoxContainer"]
-layout_mode = 2
-theme_override_constants/separation = 900
-
-[node name="TextureButton" type="TextureButton" parent="Tutorial Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-texture_normal = ExtResource("15_oycv0")
-texture_pressed = ExtResource("16_qdngo")
-texture_hover = ExtResource("16_qdngo")
-
-[node name="TextureButton2" type="TextureButton" parent="Tutorial Panel/Panel/MarginContainer/VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-texture_normal = ExtResource("17_2a2xp")
-texture_pressed = ExtResource("18_a3g3g")
-texture_hover = ExtResource("18_a3g3g")
 
 [node name="CreditsPanel" type="CanvasLayer" parent="."]
 visible = false

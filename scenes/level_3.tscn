@@ -2019,7 +2019,7 @@ region_rect = Rect2(29.8499, 62.2955, 34.5329, 34.3531)
 [node name="pause" parent="." instance=ExtResource("7_r2ev1")]
 position = Vector2(565, 592)
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="Light" type="PointLight2D" parent="."]
 process_mode = 1
 position = Vector2(663, 417)
 rotation = 1.66469
@@ -2030,3 +2030,38 @@ texture_scale = 18.63
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0.486275, 0.486275, 0.329412, 1)
+
+[node name="notes" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bench" parent="notes" instance=ExtResource("3_3q57x")]
+visible = false
+position = Vector2(979, 656)
+interact_label = "Bench"
+interact_type = "show_note"
+interact_value = "We used to sit here and talk for hours."
+interact_value2 = "If only I could have one more conversation with you, I’d say all the things I should have said."
+interact_value3 = "Please, give me that chance."
+
+[node name="birdhouse" parent="notes" instance=ExtResource("3_3q57x")]
+visible = false
+position = Vector2(799, 223)
+scale = Vector2(1.25698, 1.42011)
+interact_label = "Birdhouse"
+interact_type = "show_note"
+interact_value = "Remember when we built this birdhouse? "
+interact_value2 = " If I could go back to that day, I’d make sure we never had that fight."
+interact_value3 = " I’d do anything to change what happened."
+
+[node name="tree" parent="notes" instance=ExtResource("3_3q57x")]
+visible = false
+position = Vector2(377, 292)
+scale = Vector2(3.41379, 6.5)
+interact_label = "Withered Tree"
+interact_type = "show_note"
+interact_value = "This tree... it used to be so full of life, like us."
+interact_value2 = "If I could bring it back, maybe I could bring you back too. Please, just give me this one miracle. "
+interact_value3 = "Let it flourish again, and maybe there’s still hope for us."

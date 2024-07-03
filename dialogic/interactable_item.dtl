@@ -1,9 +1,7 @@
 # for interactable items with function e.g. wedding photo(starts the mission)
+[signal arg="dialogue_started"]
 if {itemlabel} != "null":
-	[signal arg="dialogue_started"]
 	{itemlabel}
-if {item} == "Mirror":
-	[signal arg="teleport"]
+	[signal arg="dialogue_finished"]
 [signal arg="dialogue_finished"]
 [end_timeline]
-jump level2cutscene/

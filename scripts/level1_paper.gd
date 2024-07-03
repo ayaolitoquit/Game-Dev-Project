@@ -3,7 +3,7 @@ extends Area2D
 #signal paper_collected
 var body_detected = false
 var is_wedphoto_interacted = false
-var disappear_duration = 60.0  # Duration to disappear over (in seconds)
+var disappear_duration = 80.0  # Duration to disappear over (in seconds)
 var disappear_timer = 0.0
 var disappearing = false
 
@@ -63,6 +63,7 @@ func _process(_delta):
 	if is_wedphoto_interacted:
 		if body_detected and Input.is_action_just_pressed("interact"):
 			Game.emit_signal("paper_is_collected")
+			AudioManager.paper_sfx.play()
 			queue_free()
 
 	if disappearing and disappear_timer > 0:

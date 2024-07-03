@@ -1,0 +1,6 @@
+[background arg="res://assets/Menu/Tutorial Page.png" fade="0.0"]
+[wait_input]
+[background arg="Tutorial2.png" fade="0.0"]
+[wait_input]
+[background arg="Tutorial3.png" fade="0.0"]
+[wait_input]

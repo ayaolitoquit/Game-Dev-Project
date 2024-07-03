@@ -35,9 +35,11 @@ directories/dtl_directory={
 "journal_hint": "res://dialogic/journal_hint.dtl",
 "level1cutscene1": "res://dialogic/level1cutscene1.dtl",
 "level2cutscene": "res://dialogic/level2cutscene.dtl",
+"level2cutscene_opening": "res://dialogic/level2cutscene_opening.dtl",
 "level3cutscene": "res://dialogic/level3cutscene.dtl",
 "next_level": "res://dialogic/next_level.dtl",
-"progress_next_level": "res://dialogic/progress_next_level.dtl"
+"progress_next_level": "res://dialogic/progress_next_level.dtl",
+"tutorial menu": "res://assets/cutscenes/level1/tutorial menu.dtl"
 }
 variables={
 "inputSecretWord": "",

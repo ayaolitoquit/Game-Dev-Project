@@ -1,16 +1,14 @@
 extends Node2D
 
 @onready var pause = $pause
+@onready var player_flashlight = $Player/player_flashlight
+@onready var to_be_continued = $"to be continued"
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	Game.current_level = 3
-	Dialogic.start("level3cutscene")
+	Game.connect("flashlight_acquired", on_flashlight_acquired)
 	pause.hide_pause()
 	set_process_input(true)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
-	Dialogic.VAR.level = "level3"
-
 
 func _input(_event):
 	if Input.is_action_just_pressed("pause"):
@@ -35,4 +33,13 @@ func _on_dialogic_signal(argument: String):
 	if argument == "d_next_level":
 		Game.current_level += 1
 		#AudioManager.bgm.stop() ################################# 
-		get_tree().change_scene_to_file("res://scenes/level_4.tscn")
+		get_tree().change_scene_to_file("res://scenes/level_5.tscn")
+
+func on_flashlight_acquired():
+	player_flashlight.show()
+
+func _on_area_2d_body_entered(body):
+	print("tumama")
+	if body.name == "Player":
+		print("nadetect")
+		to_be_continued.show()

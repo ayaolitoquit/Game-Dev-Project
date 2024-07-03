@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://btx6kydslcam3"]
+[gd_scene load_steps=15 format=3 uid="uid://btx6kydslcam3"]
 
 [ext_resource type="PackedScene" uid="uid://d2ykemmyhdq57" path="res://scenes/player.tscn" id="1_8cl23"]
 [ext_resource type="Texture2D" uid="uid://cluuav7gghc6n" path="res://assets/level4/GDlevel4.png" id="1_8t2b4"]
-[ext_resource type="Script" path="res://scenes/level_4.gd" id="1_ifho5"]
+[ext_resource type="Script" path="res://scripts/level_4.gd" id="1_itdbv"]
 [ext_resource type="Texture2D" uid="uid://lvxi3v4vgpwq" path="res://assets/Level1/GDLevel1.png" id="2_kml1w"]
 [ext_resource type="PackedScene" uid="uid://d28jninlsf4ot" path="res://scenes/ingame_ui.tscn" id="2_ob1jy"]
 [ext_resource type="PackedScene" uid="uid://bhlyxse2u0tep" path="res://scenes/interactable.tscn" id="5_30s5h"]
+[ext_resource type="Texture2D" uid="uid://bgw4870ituret" path="res://assets/Menu/To Be Continued.png" id="7_f0lr1"]
+[ext_resource type="PackedScene" uid="uid://p5c8ajhgnq62" path="res://scenes/pause_menu.tscn" id="8_j6bar"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4dahc"]
 texture = ExtResource("1_8t2b4")
@@ -1155,8 +1157,11 @@ gradient = SubResource("Gradient_ot0px")
 fill = 1
 fill_from = Vector2(0.525641, 0.529915)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfmd4"]
+size = Vector2(90, 20)
+
 [node name="level4" type="Node2D"]
-script = ExtResource("1_ifho5")
+script = ExtResource("1_itdbv")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_4txug")
@@ -1228,3 +1233,28 @@ scale = Vector2(0.999747, 1.02505)
 energy = 0.69
 texture = SubResource("GradientTexture2D_sto53")
 texture_scale = 3.12
+
+[node name="pause" parent="." instance=ExtResource("8_j6bar")]
+z_index = 5
+
+[node name="to be continued" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="TextureRect" type="TextureRect" parent="to be continued"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_f0lr1")
+expand_mode = 1
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(1000, 437)
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(34, 0)
+shape = SubResource("RectangleShape2D_gfmd4")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

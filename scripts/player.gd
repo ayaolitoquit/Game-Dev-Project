@@ -15,6 +15,7 @@ var input = Vector2.ZERO
 var samplestring = ""
 var pause_interaction = false
 var rings_acquired = false
+var journal_1st = false
 
 func _ready():
 	update_interactions()
@@ -23,6 +24,12 @@ func _ready():
 		Game.connect("paper_iscomplete", paper_completed) 
 		store_initial_item_states()
 	Dialogic.signal_event.connect(_on_dialogic_signal)
+	set_process_input(true)
+	#var player_state = Game._set_state()
+	#if player_state:
+		#player.position = player_state.position
+		#player.velocity = player_state.velocity
+		## ...
 
 func _on_dialogic_signal(argument: String):
 	if argument == "dialogue_started":
@@ -88,28 +95,27 @@ func execute_interaction():
 		var cur_interaction = all_interactions[0]
 		match cur_interaction.interact_type:
 			"show_note": 
-				Game.items_interacted.emit(str(cur_interaction.interact_value), str(cur_interaction.interact_value2), str(cur_interaction.interact_value3))
-				
+				Dialogic.VAR.itemlabel = cur_interaction.interact_value
+				Dialogic.VAR.itemlabel2 = cur_interaction.interact_value2
+				Dialogic.VAR.itemlabel3= cur_interaction.interact_value3
+				Dialogic.start("item_interact")
 			"show_description": pass
 			"interactable": 
 				if interact_label.text == str("Wedding Photo"):
 					level1timer.start()
 					Game.wedding_photo_interacted.emit(str(cur_interaction.interact_value))
 					Game.disappear_papers.emit()
-				if interact_label.text == str("Mirror"):
-					Dialogic.VAR.itemlabel = cur_interaction.interact_value
-					Dialogic.start("interactable_item")
-					Dialogic.VAR.item = cur_interaction.interact_label
-					pass
+				
+
 				if interact_label.text in ["Roses", "Lilies", "Tulips", "Daisies", "Dahlias","Irises", "Sunflowers"]:
 					Dialogic.VAR.itemlabel = cur_interaction.interact_value
 					Dialogic.start("interactable_item")
-					pass
+
 				if interact_label.text == str("Flashlight"):
 					Game.emit_signal("flashlight_acquired")
 					Dialogic.VAR.itemlabel = cur_interaction.interact_value
 					Dialogic.start("interactable_item")
-					pass
+
 			"next_level":
 				if interact_label.text == str("Gate"):
 					print("is rings " + str(rings_acquired))
@@ -120,9 +126,19 @@ func execute_interaction():
 					Dialogic.start("progress_next_level")
 			"journal_hint":
 				Dialogic.start("journal_hint")
-				Game.emit_signal("mission_counter")
+				if not journal_1st:
+					Game.emit_signal("mission_counter")
+					journal_1st = true
 			"compartment":
 				Dialogic.start("compartment")
+			"mirror":
+				Dialogic.VAR.item = cur_interaction.interact_label
+				Dialogic.start("level2cutscene")
+				#if interact_label.text == str("Mirror"):
+					#Dialogic.VAR.itemlabel = cur_interaction.interact_value
+					#Dialogic.start("interactable_item")
+					#
+					#print("nyare sayo beh")
 
 ##############################################################
 func paper_completed():
