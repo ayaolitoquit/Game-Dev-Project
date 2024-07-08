@@ -6,8 +6,8 @@ const LEVEL_1_PAPER = preload("res://scenes/level_1_paper.tscn")
 
 
 func _ready():
-	pause.hide_pause()
 	Dialogic.start("level1cutscene1")
+	pause.hide_pause()
 	Game.connect("respawn_paper", respawn_papers)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	AudioManager.bgm.play()

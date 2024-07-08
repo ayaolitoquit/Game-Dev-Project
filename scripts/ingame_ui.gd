@@ -23,8 +23,8 @@ func _ready():
 	
 
 func _process(_delta):
-	if is_wedphoto_interacted:
-		mission_1.show()
+	#if is_wedphoto_interacted:
+		#quest_counter +=1
 	
 	#collect broken pieces
 	if paper_collected == 9:
@@ -32,7 +32,11 @@ func _process(_delta):
 	
 	if Game.current_level != 1:
 		mission_1.show() 
-		
+
+	update_mission()
+
+func update_mission():
+	mission_1.text = quests[quest_counter]
 
 func on_paper_is_collected():
 	paper_collected += 1
@@ -43,6 +47,7 @@ func on_wedding_photo_interacted(label):
 	Dialogic.start("interactable_item")
 	is_wedphoto_interacted = true
 	counter.show()
+	quest_counter +=1
 
 #func on_items_interacted(label1, label2, label3):
 	#

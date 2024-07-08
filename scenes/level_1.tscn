@@ -1075,7 +1075,7 @@ zoom = Vector2(4, 4)
 
 [node name="UI" parent="." instance=ExtResource("3_8mmoh")]
 process_mode = 1
-quests = PackedStringArray("Collect the broken pieces of the wedding photo before they fade away", "Go to the bathroom")
+quests = PackedStringArray("Explore the house", "Collect the broken pieces of the wedding photo before they fade away", "Go to the bathroom")
 
 [node name="pieces" type="Node" parent="."]
 process_mode = 1
